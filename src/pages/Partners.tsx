@@ -19,7 +19,6 @@ const arr = [
 const Partners: React.FC<any> = () => {
   return (
     <StyledContainer>
-      <video src="videos/Partners_H.mp4" autoPlay muted loop />
       <video src="videos/Stars_Partners.webm" autoPlay muted loop />
       <Box>
         <img src="images/Earth_Partners.png" alt="" />
@@ -141,11 +140,6 @@ const StyledContainer = styled(Box)`
     }
   }
   > video:first-of-type {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-  }
-  > video:nth-of-type(2) {
     position: absolute;
     width: 100%;
     height: 100%;
