@@ -1,6 +1,6 @@
 import React from "react";
-import { Box } from "@material-ui/core";
-import styled from "styled-components";
+import { Box } from "@mui/material";
+import styled from "@mui/styled-engine-sc";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 import Decentralization from "./Decentralization";
 import Metrics from "./Metrics";
@@ -71,8 +71,7 @@ const Landing: React.FC = () => {
         setFade(true);
       }
       setPage(pageNext);
-      if (page === 4 && pageNext !== 4)
-        document.body.scrollIntoView({ behavior: "smooth" });
+      if (page === 4 && pageNext !== 4) document.body.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -116,13 +115,13 @@ const Landing: React.FC = () => {
           <Page active={page === 3 ? 1 : 0} onClick={() => click(3)} />
           <Page active={page === 4 ? 1 : 0} onClick={() => click(4)} />
         </Pagination>
-        <ScrollIcon src="images/Mouse.svg" />
+        <ScrollIcon component="img" src="images/Mouse.svg" />
       </main>
     </StyledContainer>
   );
 };
 
-const ScrollIcon = styled.img`
+const ScrollIcon = styled(Box)`
   position: absolute;
   bottom: 100px;
   right: 173px;
@@ -138,7 +137,7 @@ const ScrollIcon = styled.img`
 
 const Page = styled(Box)<any>`
   cursor: pointer;
-  ${({ active }) => active && "transform: scale(2.1517);"}
+  ${({ active }: any) => active && "transform: scale(2.1517);"}
 `;
 
 const Pagination = styled(Box)`
