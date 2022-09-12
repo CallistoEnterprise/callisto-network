@@ -1,6 +1,6 @@
 import React from "react";
-import styled from "styled-components";
-import { Box, Fade } from "@material-ui/core";
+import styled from "@mui/styled-engine-sc";
+import { Box, Fade } from "@mui/material";
 
 const Topbar: React.FC = () => {
   const [open, setOpen] = React.useState(false);

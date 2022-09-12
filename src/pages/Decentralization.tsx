@@ -1,8 +1,8 @@
 import React from "react";
-import styled from "styled-components";
-import { Box } from "@material-ui/core";
+import styled from "@mui/styled-engine-sc";
+import { Box } from "@mui/material";
 
-const Decentralization: React.FC<any> = ({ next, slide }) => {
+const Decentralization: React.FC<any> = ({ next }) => {
   const [page, setPage] = React.useState(0);
   const [playing, setPlaying] = React.useState(false);
   const [section1] = React.useState([React.useRef<any>(), React.useRef<any>()]);
@@ -49,13 +49,7 @@ const Decentralization: React.FC<any> = ({ next, slide }) => {
     <StyledContainer next={next ? 1 : 0}>
       <img src="images/Earth.png" alt="" />
       <video src="videos/Stars.webm" autoPlay muted loop />
-      <video
-        ref={section1[0]}
-        src="videos/Logo_Anim Hi Quality.webm"
-        autoPlay
-        muted
-        loop
-      />
+      <video ref={section1[0]} src="videos/Logo_Anim Hi Quality.webm" autoPlay muted loop />
       <CuttingText ref={section1[1]}>Cutting Edge Decentralization</CuttingText>
       <Section2 ref={section2[0]} style={{ opacity: 0 }}>
         <Title>Why Callisto Network?</Title>
@@ -63,52 +57,43 @@ const Decentralization: React.FC<any> = ({ next, slide }) => {
           <Content ref={refs[0]}>
             <Subtitle>Proof of Work</Subtitle>
             <Text mt="17.9px" maxWidth="745.57px">
-              A proof-of-work blockchain compatible with EVM applications and
-              resistant to <span>51% attacks.</span>
+              A proof-of-work blockchain compatible with EVM applications and resistant to{" "}
+              <span>51% attacks.</span>
             </Text>
             <Text mt="11.27px" maxWidth="825.14px">
-              By introducing <span>ZPoW</span>, we aim to address the
-              limitations of <span>proof-of-work</span> consensus by enabling a
-              throughput of up to <span>100 000 transactions</span> per second
-              with a level of security identical to Bitcoin.
+              By introducing <span>ZPoW</span>, we aim to address the limitations of{" "}
+              <span>proof-of-work</span> consensus by enabling a throughput of up to{" "}
+              <span>100 000 transactions</span> per second with a level of security identical to
+              Bitcoin.
             </Text>
           </Content>
           <Content ref={refs[1]} style={{ opacity: 0 }}>
             <Subtitle>Security</Subtitle>
             <Text mt="17.9px" maxWidth="745.57px">
-              Security is the real catalyst for the adoption of any technology;
-              with this in mind, <span>Callisto Network</span> was born with the
-              vision of fostering the blockchain ecosystem's security.
+              Security is the real catalyst for the adoption of any technology; with this in mind,{" "}
+              <span>Callisto Network</span> was born with the vision of fostering the blockchain
+              ecosystem's security.
             </Text>
             <Text mt="11.27px" maxWidth="825.14px">
-              Having contributed to the most popular blockchains and crypto
-              projects, we are leveraging our experience to establish{" "}
-              <span>Callisto Network</span> as the most advanced and{" "}
-              <span>secure proof of work blockchain.</span>
+              Having contributed to the most popular blockchains and crypto projects, we are
+              leveraging our experience to establish <span>Callisto Network</span> as the most
+              advanced and <span>secure proof of work blockchain.</span>
             </Text>
           </Content>
           <Content ref={refs[2]} style={{ opacity: 0 }}>
             <Subtitle>Monetary Policy</Subtitle>
             <Text mt="17.9px" maxWidth="745.57px">
-              One of Callisto Network's unique features is its{" "}
-              <span>Dynamic Monetary Policy</span>, which introduces a dynamic
-              inflation/deflation rate based on the usage of blockchain with
-              incentives for miners to secure the network continuously.
+              One of Callisto Network's unique features is its <span>Dynamic Monetary Policy</span>,
+              which introduces a dynamic inflation/deflation rate based on the usage of blockchain
+              with incentives for miners to secure the network continuously.
             </Text>
             <Text mt="11.27px" maxWidth="825.14px">
-              A burn mechanism ensures that CLO coins have a long-term total
-              supply of <span>3 billion</span>; thereby, CLO can be considered
-              as a store of value asset.
+              A burn mechanism ensures that CLO coins have a long-term total supply of{" "}
+              <span>3 billion</span>; thereby, CLO can be considered as a store of value asset.
             </Text>
           </Content>
         </Box>
-        <video
-          ref={videoRefs[0]}
-          src="videos/ZPoW_VP9.webm"
-          autoPlay
-          muted
-          loop
-        />
+        <video ref={videoRefs[0]} src="videos/ZPoW_VP9.webm" autoPlay muted loop />
         <video
           ref={videoRefs[1]}
           src="videos/Security_VP9.webm"
@@ -127,18 +112,9 @@ const Decentralization: React.FC<any> = ({ next, slide }) => {
         />
       </Section2>
       <Pagination ref={section2[1]} style={{ opacity: 0 }}>
-        <Page
-          active={page === 0 ? 1 : 0}
-          onClick={() => !playing && setPage(0)}
-        />
-        <Page
-          active={page === 1 ? 1 : 0}
-          onClick={() => !playing && setPage(1)}
-        />
-        <Page
-          active={page === 2 ? 1 : 0}
-          onClick={() => !playing && setPage(2)}
-        />
+        <Page active={page === 0 ? 1 : 0} onClick={() => !playing && setPage(0)} />
+        <Page active={page === 1 ? 1 : 0} onClick={() => !playing && setPage(1)} />
+        <Page active={page === 2 ? 1 : 0} onClick={() => !playing && setPage(2)} />
       </Pagination>
     </StyledContainer>
   );
@@ -161,7 +137,7 @@ const Content = styled(Box)`
 const Page = styled(Box)<any>`
   transition: 1s;
   cursor: pointer;
-  ${({ active }) => active && "transform: scale(2.346);"}
+  ${({ active }: any) => active && "transform: scale(2.346);"}
 `;
 
 const Pagination = styled(Box)`
@@ -294,7 +270,7 @@ const StyledContainer = styled(Box)<any>`
     bottom: 0;
     transition: 1s;
     z-index: 1;
-    right: ${({ next }) => (next ? -23 : 0)}%;
+    right: ${({ next }: any) => (next ? -23 : 0)}%;
   }
   > video:first-of-type {
     position: absolute;

@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import PropTypes from "prop-types";
-import { Box, Fade } from "@material-ui/core";
-import styled from "styled-components";
+import { Box, Fade } from "@mui/material";
+import styled from "@mui/styled-engine-sc";
 
 import Topbar from "./Topbar";
 import Footer from "./Footer";

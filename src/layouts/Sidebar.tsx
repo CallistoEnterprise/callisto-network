@@ -1,6 +1,6 @@
 import React from 'react'
-import styled from 'styled-components'
-import { Box } from '@material-ui/core'
+import styled from '@mui/styled-engine-sc'
+import { Box } from '@mui/material'
 
 const Sidebar: React.FC = () => {
     return (

@@ -1,30 +1,24 @@
 import React from "react";
-import styled from "styled-components";
-import { Box } from "@material-ui/core";
+import styled from "@mui/styled-engine-sc";
+import { Box } from "@mui/material";
 
 const Footer: React.FC = () => {
   return (
     <StyledContainer>
       <Box display="flex" flexDirection="column" alignItems="flex-start">
         <Head display="flex">
-          <Box color="white" gridRowGap="30.28px">
+          <Box component="div" color="white" style={{ gridRowGap: 30.28 }}>
             <img src="images/Callisto Logo.png" alt="" />
             <Box display="flex" flexDirection="column">
               <Box component="span" fontSize="16px" lineHeight="19px">
                 All rights reserved by
               </Box>
-              <Box
-                component="span"
-                mt="4.5px"
-                fontSize="17px"
-                lineHeight="21px"
-                fontWeight="700"
-              >
+              <Box component="span" mt="4.5px" fontSize="17px" lineHeight="21px" fontWeight="700">
                 Callisto Network
               </Box>
             </Box>
           </Box>
-          <Box color="white" gridRowGap="46.38px">
+          <Box component="div" color="white" style={{ gridRowGap: 46.38 }}>
             <JoinText>Resources</JoinText>
             <List>
               <span>FAQ</span>
@@ -32,7 +26,7 @@ const Footer: React.FC = () => {
               <span>Community Guidelines</span>
             </List>
           </Box>
-          <Box color="white" gridRowGap="46.38px">
+          <Box component="div" color="white" style={{ gridRowGap: 46.38 }}>
             <JoinText>Callisto Network</JoinText>
             <List>
               <span>Partners</span>
@@ -41,7 +35,7 @@ const Footer: React.FC = () => {
               <span>Contact us</span>
             </List>
           </Box>
-          <Box color="white" gridRowGap="33.12px">
+          <Box component="div" color="white" style={{ gridRowGap: 33.12 }}>
             <JoinText>Join our community</JoinText>
             <Socials>
               <img src="images/Facebook.svg" alt="" />
@@ -54,7 +48,7 @@ const Footer: React.FC = () => {
               <img src="images/Youtube.svg" alt="" />
             </Socials>
           </Box>
-          <Box gridRowGap="59.38px">
+          <Box component="div" style={{ gridRowGap: 59.38 }}>
             <JoinText>Subscribe to our newsletter</JoinText>
             <Input>
               <input placeholder="Your email" />
@@ -86,13 +80,7 @@ const Footer: React.FC = () => {
               d="M7.3499 12.0219C8.65201 12.0219 9.76164 11.5577 10.4976 10.6972L9.54651 9.79134C8.96905 10.4254 8.25572 10.7311 7.42916 10.7311C5.78737 10.7311 4.59848 9.57621 4.59848 7.94574C4.59848 6.31527 5.78737 5.16035 7.42916 5.16035C8.25572 5.16035 8.96905 5.46607 9.54651 6.08882L10.4976 5.19432C9.76164 4.33379 8.65201 3.86956 7.36122 3.86956C4.92684 3.86956 3.1152 5.57929 3.1152 7.94574C3.1152 10.3122 4.92684 12.0219 7.3499 12.0219Z"
               fill="white"
             />
-            <circle
-              cx="7.11698"
-              cy="8.02567"
-              r="6.76314"
-              stroke="white"
-              strokeWidth="0.70767"
-            />
+            <circle cx="7.11698" cy="8.02567" r="6.76314" stroke="white" strokeWidth="0.70767" />
           </svg>
           <span>All rights reserved by Callisto Network</span>
         </CopyrightBox>
