@@ -14,6 +14,7 @@
     "@types/node": "^16.11.58",
     "@types/react": "^18.0.19",
     "@types/react-dom": "^18.0.6",
+    "axios": "^0.27.2",
     "body-scroll-lock": "^4.0.0-beta.0",
     "fade-carousel": "^1.1.4",
     "prop-types": "^15.8.1",

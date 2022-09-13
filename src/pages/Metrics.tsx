@@ -2,41 +2,53 @@ import React from "react";
 import styled from "@mui/styled-engine-sc";
 import { Box, Fade } from "@mui/material";
 import { useCountUp } from "react-countup";
+import axios from "axios";
 
 const Metrics: React.FC<any> = ({ active }) => {
   const metric1 = React.useRef(null);
   const metric2 = React.useRef(null);
   const metric3 = React.useRef(null);
+  const [metricData, setMetricData] = React.useState<any>({});
   const [open1, setOpen1] = React.useState(false);
   const [open2, setOpen2] = React.useState(false);
   const [open3, setOpen3] = React.useState(false);
   const { reset: reset1, start: start1 } = useCountUp({
     ref: metric1,
     start: 0,
-    end: 2693273,
+    end: metricData.monthly_transactions,
     delay: 0,
     duration: 5,
-    separator: ".",
+    separator: ",",
   });
   const { reset: reset2, start: start2 } = useCountUp({
     ref: metric2,
     start: 0,
-    end: 6434,
+    end: metricData.netwok_hashrate,
     delay: 0,
     duration: 6,
-    separator: ".",
+    separator: ",",
+    decimal: ".",
+    decimals: 2
   });
   const { reset: reset3, start: start3 } = useCountUp({
     ref: metric3,
     start: 0,
-    end: 1228290964422,
+    end: metricData.frozen_coins,
     delay: 0,
     duration: 7,
-    separator: ".",
+    separator: ",",
+    decimal: ".",
+    decimals: 3
   });
 
-  React.useMemo(() => {
+  React.useMemo(async () => {
     if (active) {
+      const {
+        data: { result },
+      } = await axios.get("https://cloe.deta.dev/clo_metrics");
+      let tmp = result
+      tmp.netwok_hashrate = parseFloat(result.netwok_hashrate.replace(" GH/s", ""))
+      setMetricData(tmp)
       setTimeout(() => setOpen1(true), 2000);
       setTimeout(() => setOpen2(true), 3000);
       setTimeout(() => setOpen3(true), 4000);
