@@ -7,8 +7,6 @@ const Roadmap: React.FC<any> = ({ active }) => {
   React.useMemo(() => {
     if(active) {
       setTimeout(() => {
-
-        video.current.pause();
         video.current.currentTime = 0;
         video.current.play();
       }, 900)
