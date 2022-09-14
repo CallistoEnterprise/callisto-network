@@ -22,26 +22,7 @@ const Landing: React.FC = () => {
     useRef<any>(),
     useRef<any>(),
   ]);
-  useMemo(() => {
-    disableBodyScroll(document.body);
-    // let ts: any;
-    // $(document).on("touchstart", function (e: any) {
-    //   ts = e.originalEvent.touches[0].clientY;
-    // });
-
-    // $(document).on("touchend", function (e: any) {
-    //   var te = e.originalEvent.changedTouches[0].clientY;
-    //   if (!playing) {
-    //     if (page < 4 || (page === 4 && window.pageYOffset === 0)) {
-    //       if (ts > te + 5) {
-    //         if (page < 4) click(page + 1);
-    //       } else if (ts < te - 5) {
-    //         if (page > 0) click(page - 1);
-    //       }
-    //     }
-    //   }
-    // });
-  }, []);
+  useMemo(() => disableBodyScroll(document.body), []);
   useMemo(() => {
     if (refs[page].current) {
       setPlaying(true);
@@ -113,28 +94,21 @@ const Landing: React.FC = () => {
     }
   };
 
-  const touchStart = (e: any) => {
-    setTouchPoint(e.touches[0].clientY);
-  };
+  const touchStart = (e: any) => setTouchPoint(e.touches[0].clientY);
 
   const touchEnd = (e: any) => {
     var te = e.changedTouches[0].clientY;
-    if (!playing) {
-      if (page < 4 || (page === 4 && window.pageYOffset === 0)) {
-        if (touchPoint > te + 5) {
-          if (page < 4) click(page + 1);
-        } else if (touchPoint < te - 5) {
-          if (page > 0) click(page - 1);
-        }
-      }
+    if (!playing && (page < 4 || (page === 4 && window.pageYOffset === 0))) {
+      if (touchPoint > te + 5 && page < 4) click(page + 1);
+      else if (touchPoint < te - 5 && page > 0) click(page - 1);
     }
   };
 
   return (
     <StyledContainer
-      onWheel={wheel}
-      onTouchStart={touchStart}
-      onTouchEnd={touchEnd}
+      // onWheel={wheel}
+      // onTouchStart={touchStart}
+      // onTouchEnd={touchEnd}
     >
       <main>
         <section ref={refs[0]}>
