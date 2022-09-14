@@ -8,6 +8,7 @@ import Roadmap from "./Roadmap";
 import Partners from "./Partners";
 
 const Landing: React.FC = () => {
+  const [touchPoint, setTouchPoint] = useState(0);
   const [page, setPage] = useState(0);
   const [dead, setDead] = useState(false);
   const [playing, setPlaying] = useState(false);
@@ -23,6 +24,23 @@ const Landing: React.FC = () => {
   ]);
   useMemo(() => {
     disableBodyScroll(document.body);
+    // let ts: any;
+    // $(document).on("touchstart", function (e: any) {
+    //   ts = e.originalEvent.touches[0].clientY;
+    // });
+
+    // $(document).on("touchend", function (e: any) {
+    //   var te = e.originalEvent.changedTouches[0].clientY;
+    //   if (!playing) {
+    //     if (page < 4 || (page === 4 && window.pageYOffset === 0)) {
+    //       if (ts > te + 5) {
+    //         if (page < 4) click(page + 1);
+    //       } else if (ts < te - 5) {
+    //         if (page > 0) click(page - 1);
+    //       }
+    //     }
+    //   }
+    // });
   }, []);
   useMemo(() => {
     if (refs[page].current) {
@@ -95,8 +113,29 @@ const Landing: React.FC = () => {
     }
   };
 
+  const touchStart = (e: any) => {
+    setTouchPoint(e.touches[0].clientY);
+  };
+
+  const touchEnd = (e: any) => {
+    var te = e.changedTouches[0].clientY;
+    if (!playing) {
+      if (page < 4 || (page === 4 && window.pageYOffset === 0)) {
+        if (touchPoint > te + 5) {
+          if (page < 4) click(page + 1);
+        } else if (touchPoint < te - 5) {
+          if (page > 0) click(page - 1);
+        }
+      }
+    }
+  };
+
   return (
-    <StyledContainer onWheel={wheel} onTouchMove={wheel}>
+    <StyledContainer
+      onWheel={wheel}
+      onTouchStart={touchStart}
+      onTouchEnd={touchEnd}
+    >
       <main>
         <section ref={refs[0]}>
           <Decentralization
