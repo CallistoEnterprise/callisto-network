@@ -64,20 +64,20 @@ const Decentralization: React.FC<any> = ({
   const click = (pageNext: any) => {
     if (!playing) setPage(pageNext);
   };
-  const wheel = (e: any) => {
-    if (!playing) {
-      switch (e.deltaY > 0) {
-        case true:
-          click((page + 1) % 3);
-          break;
-        case false:
-          click((page - 1) % 3);
-          break;
-      }
-    }
-  };
+  // const wheel = (e: any) => {
+  //   if (!playing) {
+  //     switch (e.deltaY > 0) {
+  //       case true:
+  //         click((page + 1) % 3);
+  //         break;
+  //       case false:
+  //         click((page - 1) % 3);
+  //         break;
+  //     }
+  //   }
+  // };
   return (
-    <StyledContainer next={next ? 1 : 0} onWheel={wheel}>
+    <StyledContainer next={next ? 1 : 0}>
       <img src="images/Earth.png" alt="" />
       <video src="videos/Stars.webm" autoPlay muted loop />
       <video
