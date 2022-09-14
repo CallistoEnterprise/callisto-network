@@ -1,17 +1,17 @@
-import React from "react";
+import React, { useState, useMemo, useRef } from "react";
 import styled from "@mui/styled-engine-sc";
 import { Box, Fade } from "@mui/material";
 import { useCountUp } from "react-countup";
 import axios from "axios";
 
 const Metrics: React.FC<any> = ({ active }) => {
-  const metric1 = React.useRef(null);
-  const metric2 = React.useRef(null);
-  const metric3 = React.useRef(null);
-  const [metricData, setMetricData] = React.useState<any>({});
-  const [open1, setOpen1] = React.useState(false);
-  const [open2, setOpen2] = React.useState(false);
-  const [open3, setOpen3] = React.useState(false);
+  const metric1 = useRef(null);
+  const metric2 = useRef(null);
+  const metric3 = useRef(null);
+  const [metricData, setMetricData] = useState<any>({});
+  const [open1, setOpen1] = useState(false);
+  const [open2, setOpen2] = useState(false);
+  const [open3, setOpen3] = useState(false);
   const { reset: reset1, start: start1 } = useCountUp({
     ref: metric1,
     start: 0,
@@ -28,7 +28,7 @@ const Metrics: React.FC<any> = ({ active }) => {
     duration: 6,
     separator: ",",
     decimal: ".",
-    decimals: 2
+    decimals: 2,
   });
   const { reset: reset3, start: start3 } = useCountUp({
     ref: metric3,
@@ -38,17 +38,19 @@ const Metrics: React.FC<any> = ({ active }) => {
     duration: 7,
     separator: ",",
     decimal: ".",
-    decimals: 3
+    decimals: 3,
   });
 
-  React.useMemo(async () => {
+  useMemo(async () => {
     if (active) {
       const {
         data: { result },
       } = await axios.get("https://cloe.deta.dev/clo_metrics");
-      let tmp = result
-      tmp.netwok_hashrate = parseFloat(result.netwok_hashrate.replace(" GH/s", ""))
-      setMetricData(tmp)
+      let tmp = result;
+      tmp.netwok_hashrate = parseFloat(
+        result.netwok_hashrate.replace(" GH/s", "")
+      );
+      setMetricData(tmp);
       setTimeout(() => setOpen1(true), 2000);
       setTimeout(() => setOpen2(true), 3000);
       setTimeout(() => setOpen3(true), 4000);

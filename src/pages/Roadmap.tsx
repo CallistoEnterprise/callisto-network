@@ -1,24 +1,23 @@
-import React from "react";
+import React, { useMemo, useRef } from "react";
 import styled from "@mui/styled-engine-sc";
 import { Box } from "@mui/material";
 
 const Roadmap: React.FC<any> = ({ active }) => {
-  let video = React.useRef<any>()
-  React.useMemo(() => {
-    if(active) {
+  let video = useRef<any>();
+  useMemo(() => {
+    if (active) {
       setTimeout(() => {
         video.current.currentTime = 0;
         video.current.play();
-      }, 900)
+      }, 900);
     }
-  },[active])
+  }, [active]);
   return (
     <StyledContainer>
       <video ref={video} src="videos/Roadmap_H.mp4" muted loop />
     </StyledContainer>
   );
 };
-
 
 const StyledContainer = styled(Box)`
   position: relative;

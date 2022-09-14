@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useMemo, useRef } from "react";
 import { Box } from "@mui/material";
 import styled from "@mui/styled-engine-sc";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
@@ -8,21 +8,23 @@ import Roadmap from "./Roadmap";
 import Partners from "./Partners";
 
 const Landing: React.FC = () => {
-  const [page, setPage] = React.useState(0);
-  const [dead, setDead] = React.useState(false);
-  const [playing, setPlaying] = React.useState(false);
-  const [fade, setFade] = React.useState(false);
-  const [refs] = React.useState([
-    React.useRef<any>(),
-    React.useRef<any>(),
-    React.useRef<any>(),
-    React.useRef<any>(),
-    React.useRef<any>(),
+  const [page, setPage] = useState(0);
+  const [dead, setDead] = useState(false);
+  const [playing, setPlaying] = useState(false);
+  const [scrollableUp, setScrollableUp] = useState(true);
+  const [scrollableDown, setScrollableDown] = useState(true);
+  const [fade, setFade] = useState(false);
+  const [refs] = useState([
+    useRef<any>(),
+    useRef<any>(),
+    useRef<any>(),
+    useRef<any>(),
+    useRef<any>(),
   ]);
-  React.useMemo(() => {
+  useMemo(() => {
     disableBodyScroll(document.body);
   }, []);
-  React.useMemo(() => {
+  useMemo(() => {
     if (refs[page].current) {
       setPlaying(true);
       if (fade) {
@@ -71,7 +73,8 @@ const Landing: React.FC = () => {
         setFade(true);
       }
       setPage(pageNext);
-      if (page === 4 && pageNext !== 4) document.body.scrollIntoView({ behavior: "smooth" });
+      if (page === 4 && pageNext !== 4)
+        document.body.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -80,10 +83,10 @@ const Landing: React.FC = () => {
       if (page < 4 || (page === 4 && window.pageYOffset === 0)) {
         switch (e.deltaY > 0) {
           case true:
-            if (page < 4) click(page + 1);
+            if (page < 4 && scrollableDown) click(page + 1);
             break;
           case false:
-            if (page > 0) click(page - 1);
+            if (page > 0 && scrollableUp) click(page - 1);
             break;
           default:
             console.log("negative");
@@ -93,10 +96,15 @@ const Landing: React.FC = () => {
   };
 
   return (
-    <StyledContainer onWheel={wheel}>
+    <StyledContainer onWheel={wheel} onTouchMove={wheel}>
       <main>
         <section ref={refs[0]}>
-          <Decentralization next={page >= 1 && !dead} />
+          <Decentralization
+            next={page >= 1 && !dead}
+            setScrollableUp={setScrollableUp}
+            setScrollableDown={setScrollableDown}
+            page={page}
+          />
         </section>
         <section ref={refs[1]} />
         <section ref={refs[2]} style={{ opacity: 0 }}>

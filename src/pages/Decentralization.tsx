@@ -1,19 +1,28 @@
-import React from "react";
+import React, { useState, useMemo, useRef } from "react";
 import styled from "@mui/styled-engine-sc";
 import { Box } from "@mui/material";
 
-const Decentralization: React.FC<any> = ({ next }) => {
-  const [page, setPage] = React.useState(0);
-  const [playing, setPlaying] = React.useState(false);
-  const [section1] = React.useState([React.useRef<any>(), React.useRef<any>()]);
-  const [section2] = React.useState([React.useRef<any>(), React.useRef<any>()]);
-  const [refs] = React.useState([React.useRef<any>(), React.useRef<any>(), React.useRef<any>()]);
-  const [videoRefs] = React.useState([
-    React.useRef<any>(),
-    React.useRef<any>(),
-    React.useRef<any>(),
+const Decentralization: React.FC<any> = ({
+  next,
+  setScrollableDown,
+  setScrollableUp,
+  page: parentPage,
+}) => {
+  const [page, setPage] = useState(0);
+  const [playing, setPlaying] = useState(false);
+  const [section1] = useState([useRef<any>(), useRef<any>()]);
+  const [section2] = useState([useRef<any>(), useRef<any>()]);
+  const [refs] = useState([
+    useRef<any>(),
+    useRef<any>(),
+    useRef<any>(),
   ]);
-  React.useMemo(() => {
+  const [videoRefs] = useState([
+    useRef<any>(),
+    useRef<any>(),
+    useRef<any>(),
+  ]);
+  useMemo(() => {
     if (refs[page].current && videoRefs[page].current) {
       refs.forEach((x, i) => {
         x.current.style.opacity = 0;
@@ -27,7 +36,7 @@ const Decentralization: React.FC<any> = ({ next }) => {
       }, 1100);
     }
   }, [page, refs, videoRefs]);
-  React.useMemo(() => {
+  useMemo(() => {
     if (next === true && !section2.some((x) => x.current === undefined)) {
       section1.forEach((x) => (x.current.style.opacity = 0));
       setPlaying(true);
@@ -45,11 +54,39 @@ const Decentralization: React.FC<any> = ({ next }) => {
       }, 1100);
     }
   }, [next, section1, section2]);
+  // useMemo(() => {
+  //   if (parentPage === 1 && page === 0) setScrollableDown(false);
+  //   else setScrollableDown(true);
+
+  //   if (parentPage === 1 && page === 2) setScrollableUp(false);
+  //   else setScrollableUp(true);
+  // }, [parentPage, page]);
+  const click = (pageNext: any) => {
+    if (!playing) setPage(pageNext);
+  };
+  const wheel = (e: any) => {
+    if (!playing) {
+      switch (e.deltaY > 0) {
+        case true:
+          click((page + 1) % 3);
+          break;
+        case false:
+          click((page - 1) % 3);
+          break;
+      }
+    }
+  };
   return (
-    <StyledContainer next={next ? 1 : 0}>
+    <StyledContainer next={next ? 1 : 0} onWheel={wheel}>
       <img src="images/Earth.png" alt="" />
       <video src="videos/Stars.webm" autoPlay muted loop />
-      <video ref={section1[0]} src="videos/Logo_Anim Hi Quality.webm" autoPlay muted loop />
+      <video
+        ref={section1[0]}
+        src="videos/Logo_Anim Hi Quality.webm"
+        autoPlay
+        muted
+        loop
+      />
       <CuttingText ref={section1[1]}>Cutting Edge Decentralization</CuttingText>
       <Section2 ref={section2[0]} style={{ opacity: 0 }}>
         <Title>Why Callisto Network?</Title>
@@ -57,43 +94,52 @@ const Decentralization: React.FC<any> = ({ next }) => {
           <Content ref={refs[0]}>
             <Subtitle>Proof of Work</Subtitle>
             <Text mt="17.9px" maxWidth="745.57px">
-              A proof-of-work blockchain compatible with EVM applications and resistant to{" "}
-              <span>51% attacks.</span>
+              A proof-of-work blockchain compatible with EVM applications and
+              resistant to <span>51% attacks.</span>
             </Text>
             <Text mt="11.27px" maxWidth="825.14px">
-              By introducing <span>ZPoW</span>, we aim to address the limitations of{" "}
-              <span>proof-of-work</span> consensus by enabling a throughput of up to{" "}
-              <span>100 000 transactions</span> per second with a level of security identical to
-              Bitcoin.
+              By introducing <span>ZPoW</span>, we aim to address the
+              limitations of <span>proof-of-work</span> consensus by enabling a
+              throughput of up to <span>100 000 transactions</span> per second
+              with a level of security identical to Bitcoin.
             </Text>
           </Content>
           <Content ref={refs[1]} style={{ opacity: 0 }}>
             <Subtitle>Security</Subtitle>
             <Text mt="17.9px" maxWidth="745.57px">
-              Security is the real catalyst for the adoption of any technology; with this in mind,{" "}
-              <span>Callisto Network</span> was born with the vision of fostering the blockchain
-              ecosystem's security.
+              Security is the real catalyst for the adoption of any technology;
+              with this in mind, <span>Callisto Network</span> was born with the
+              vision of fostering the blockchain ecosystem's security.
             </Text>
             <Text mt="11.27px" maxWidth="825.14px">
-              Having contributed to the most popular blockchains and crypto projects, we are
-              leveraging our experience to establish <span>Callisto Network</span> as the most
-              advanced and <span>secure proof of work blockchain.</span>
+              Having contributed to the most popular blockchains and crypto
+              projects, we are leveraging our experience to establish{" "}
+              <span>Callisto Network</span> as the most advanced and{" "}
+              <span>secure proof of work blockchain.</span>
             </Text>
           </Content>
           <Content ref={refs[2]} style={{ opacity: 0 }}>
             <Subtitle>Monetary Policy</Subtitle>
             <Text mt="17.9px" maxWidth="745.57px">
-              One of Callisto Network's unique features is its <span>Dynamic Monetary Policy</span>,
-              which introduces a dynamic inflation/deflation rate based on the usage of blockchain
-              with incentives for miners to secure the network continuously.
+              One of Callisto Network's unique features is its{" "}
+              <span>Dynamic Monetary Policy</span>, which introduces a dynamic
+              inflation/deflation rate based on the usage of blockchain with
+              incentives for miners to secure the network continuously.
             </Text>
             <Text mt="11.27px" maxWidth="825.14px">
-              A burn mechanism ensures that CLO coins have a long-term total supply of{" "}
-              <span>3 billion</span>; thereby, CLO can be considered as a store of value asset.
+              A burn mechanism ensures that CLO coins have a long-term total
+              supply of <span>3 billion</span>; thereby, CLO can be considered
+              as a store of value asset.
             </Text>
           </Content>
         </Box>
-        <video ref={videoRefs[0]} src="videos/ZPoW_VP9.webm" autoPlay muted loop />
+        <video
+          ref={videoRefs[0]}
+          src="videos/ZPoW_VP9.webm"
+          autoPlay
+          muted
+          loop
+        />
         <video
           ref={videoRefs[1]}
           src="videos/Security_VP9.webm"
@@ -112,9 +158,9 @@ const Decentralization: React.FC<any> = ({ next }) => {
         />
       </Section2>
       <Pagination ref={section2[1]} style={{ opacity: 0 }}>
-        <Page active={page === 0 ? 1 : 0} onClick={() => !playing && setPage(0)} />
-        <Page active={page === 1 ? 1 : 0} onClick={() => !playing && setPage(1)} />
-        <Page active={page === 2 ? 1 : 0} onClick={() => !playing && setPage(2)} />
+        <Page active={page === 0 ? 1 : 0} onClick={() => click(0)} />
+        <Page active={page === 1 ? 1 : 0} onClick={() => click(1)} />
+        <Page active={page === 2 ? 1 : 0} onClick={() => click(2)} />
       </Pagination>
     </StyledContainer>
   );
