@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
     <StyledContainer>
       <Box display="flex" flexDirection="column" alignItems="flex-start">
         <Head display="flex">
-          <Box component="div" color="white" style={{ rowGap: 30.28 }}>
+          <Box component="div" color="white">
             <img src="images/Callisto Logo.png" alt="" />
             <Box display="flex" flexDirection="column">
               <Box component="span" fontSize="16px" lineHeight="19px">
@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
               </Box>
             </Box>
           </Box>
-          <Box component="div" color="white" style={{ rowGap: 46.38 }}>
+          <Box component="div" color="white">
             <JoinText>Resources</JoinText>
             <List>
               <span>FAQ</span>
@@ -32,7 +32,7 @@ const Footer: React.FC = () => {
               <span>Community Guidelines</span>
             </List>
           </Box>
-          <Box component="div" color="white" style={{ rowGap: 46.38 }}>
+          <Box component="div" color="white">
             <JoinText>Callisto Network</JoinText>
             <List>
               <span>Partners</span>
@@ -41,7 +41,7 @@ const Footer: React.FC = () => {
               <span>Contact us</span>
             </List>
           </Box>
-          <Box component="div" color="white" style={{ rowGap: 33.12 }}>
+          <Box component="div" color="white">
             <JoinText>Join our community</JoinText>
             <Socials>
               <img src="images/Facebook.svg" alt="" />
@@ -129,6 +129,26 @@ const Head = styled(Box)`
   }
   > div:first-of-type > span {
     font-family: Gilroy !important;
+  }
+  >div:first-of-type {
+    >*+* {
+      margin-top: 30.28px;
+    }
+  }
+  >div:nth-of-type(2) {
+    >*+* {
+      margin-top: 46.38px;
+    }
+  }
+  >div:nth-of-type(3) {
+    >*+* {
+      margin-top: 46.38px;
+    }
+  }
+  >div:nth-of-type(4) {
+    >*+* {
+      margin-top: 33.12px;
+    }
   }
 `;
 
