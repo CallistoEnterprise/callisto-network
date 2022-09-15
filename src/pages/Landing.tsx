@@ -8,12 +8,13 @@ import Roadmap from "./Roadmap";
 import Partners from "./Partners";
 
 const Landing: React.FC = () => {
+  const [scrollableDown, setScrollableDown] = useState(true);
+  const [scrollableUp, setScrollableUp] = useState(true);
   const [touchPoint, setTouchPoint] = useState(0);
+  const [decentPage, setDecentPage] = useState(0);
   const [page, setPage] = useState(0);
   const [dead, setDead] = useState(false);
   const [playing, setPlaying] = useState(false);
-  const [scrollableUp, setScrollableUp] = useState(true);
-  const [scrollableDown, setScrollableDown] = useState(true);
   const [fade, setFade] = useState(false);
   const [refs] = useState([
     useRef<any>(),
@@ -24,6 +25,8 @@ const Landing: React.FC = () => {
   ]);
   useMemo(() => disableBodyScroll(document.body), []);
   useMemo(() => {
+    setScrollableDown(page === 1 && decentPage <= 1 ? false : true);
+    setScrollableUp(page === 1 && decentPage >= 1 ? false : true);
     if (refs[page].current) {
       setPlaying(true);
       if (fade) {
@@ -55,7 +58,7 @@ const Landing: React.FC = () => {
     if (window.pageYOffset === 0) disableBodyScroll(document.body);
     if (page === 4) enableBodyScroll(document.body);
     else disableBodyScroll(document.body);
-  }, [page, fade, refs]);
+  }, [page, decentPage, fade, refs]);
 
   const click = (pageNext: any) => {
     if (!playing) {
@@ -66,14 +69,13 @@ const Landing: React.FC = () => {
         (page === 0 && pageNext === 0) ||
         (page === 1 && pageNext === 0) ||
         (page === 1 && pageNext === 1)
-      )
+      ) {
         setFade(false);
-      else {
+      } else {
         setFade(true);
       }
       setPage(pageNext);
-      if (page === 4 && pageNext !== 4)
-        document.body.scrollIntoView({ behavior: "smooth" });
+      if (page === 4 && pageNext !== 4) document.body.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -87,8 +89,6 @@ const Landing: React.FC = () => {
           case false:
             if (page > 0 && scrollableUp) click(page - 1);
             break;
-          default:
-            console.log("negative");
         }
       }
     }
@@ -99,24 +99,21 @@ const Landing: React.FC = () => {
   const touchEnd = (e: any) => {
     var te = e.changedTouches[0].clientY;
     if (!playing && (page < 4 || (page === 4 && window.pageYOffset === 0))) {
-      if (touchPoint > te + 5 && page < 4) click(page + 1);
-      else if (touchPoint < te - 5 && page > 0) click(page - 1);
+      if (touchPoint > te + 5 && page < 4 && scrollableDown) click(page + 1);
+      else if (touchPoint < te - 5 && page > 0 && scrollableUp) click(page - 1);
     }
   };
 
   return (
-    <StyledContainer
-      // onWheel={wheel}
-      // onTouchStart={touchStart}
-      // onTouchEnd={touchEnd}
-    >
+    <StyledContainer onWheel={wheel} onTouchStart={touchStart} onTouchEnd={touchEnd}>
       <main>
         <section ref={refs[0]}>
           <Decentralization
             next={page >= 1 && !dead}
-            setScrollableUp={setScrollableUp}
-            setScrollableDown={setScrollableDown}
-            page={page}
+            page={decentPage}
+            setFade={setFade}
+            setPage={setDecentPage}
+            landingPage={page}
           />
         </section>
         <section ref={refs[1]} />

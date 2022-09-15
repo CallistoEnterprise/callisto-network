@@ -4,24 +4,17 @@ import { Box } from "@mui/material";
 
 const Decentralization: React.FC<any> = ({
   next,
-  setScrollableDown,
-  setScrollableUp,
-  page: parentPage,
+  page,
+  setPage,
+  setFade,
+  landingPage,
 }) => {
-  const [page, setPage] = useState(0);
   const [playing, setPlaying] = useState(false);
+  const [touchPoint, setTouchPoint] = useState(0);
   const [section1] = useState([useRef<any>(), useRef<any>()]);
   const [section2] = useState([useRef<any>(), useRef<any>()]);
-  const [refs] = useState([
-    useRef<any>(),
-    useRef<any>(),
-    useRef<any>(),
-  ]);
-  const [videoRefs] = useState([
-    useRef<any>(),
-    useRef<any>(),
-    useRef<any>(),
-  ]);
+  const [refs] = useState([useRef<any>(), useRef<any>(), useRef<any>()]);
+  const [videoRefs] = useState([useRef<any>(), useRef<any>(), useRef<any>()]);
   useMemo(() => {
     if (refs[page].current && videoRefs[page].current) {
       refs.forEach((x, i) => {
@@ -54,30 +47,33 @@ const Decentralization: React.FC<any> = ({
       }, 1100);
     }
   }, [next, section1, section2]);
-  // useMemo(() => {
-  //   if (parentPage === 1 && page === 0) setScrollableDown(false);
-  //   else setScrollableDown(true);
-
-  //   if (parentPage === 1 && page === 2) setScrollableUp(false);
-  //   else setScrollableUp(true);
-  // }, [parentPage, page]);
   const click = (pageNext: any) => {
+    setFade(false)
     if (!playing) setPage(pageNext);
   };
   const wheel = (e: any) => {
-    if (!playing) {
+    if (!playing && landingPage === 1) {
       switch (e.deltaY > 0) {
         case true:
-          if(page < 2) click(page + 1);
+          if (page < 2) click(page + 1);
           break;
         case false:
-          if(page > 0) click(page - 1);
+          if (page > 0) click(page - 1);
           break;
       }
     }
   };
+  const touchStart = (e: any) => setTouchPoint(e.touches[0].clientY);
+
+  const touchEnd = (e: any) => {
+    var te = e.changedTouches[0].clientY;
+    if (!playing && landingPage === 1) {
+      if (touchPoint > te + 5 && page < 2) click(page + 1);
+      else if (touchPoint < te - 5 && page > 0) click(page - 1);
+    }
+  };
   return (
-    <StyledContainer next={next ? 1 : 0} onWheel={wheel}>
+    <StyledContainer next={next ? 1 : 0} onWheel={wheel} onTouchStart={touchStart} onTouchEnd={touchEnd}>
       <img src="images/Earth.png" alt="" />
       <video src="videos/Stars.webm" autoPlay muted loop />
       <video
