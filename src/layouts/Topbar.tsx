@@ -167,11 +167,13 @@ const Topbar: React.FC = () => {
 const MenuItems = styled(Box)`
   display: flex;
   flex-direction: column;
-  gap: 25.39px;
+  column-gap: 25.39px;
+  row-gap: 25.39px;
   > div {
     display: flex;
     align-items: center;
-    gap: 20px;
+    column-gap: 20px;
+    row-gap: 20px;
     > img {
       width: 34.55px;
       min-width: 34.55px;
@@ -180,7 +182,8 @@ const MenuItems = styled(Box)`
     > div {
       display: flex;
       flex-direction: column;
-      gap: 3.59px;
+      column-gap: 3.59px;
+      row-gap: 3.59px;
     }
   }
 `;
@@ -254,7 +257,8 @@ const MenuList = styled(Box)`
 // `;
 
 const PCMenu = styled(Box)`
-  gap: 46.67px;
+  column-gap: 46.67px;
+  row-gap: 46.67px;
   font-size: 18px;
   line-height: 22px;
   letter-spacing: -0.05em;

@@ -164,7 +164,7 @@ const Pagination = styled(Box)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 27.78px;
+  column-gap: 27.78px;
   top: 50%;
   right: 170px;
   transform: translateY(-50%);

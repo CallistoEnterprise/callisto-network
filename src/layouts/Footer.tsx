@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
     <StyledContainer>
       <Box display="flex" flexDirection="column" alignItems="flex-start">
         <Head display="flex">
-          <Box component="div" color="white" style={{ gridRowGap: 30.28 }}>
+          <Box component="div" color="white" style={{ rowGap: 30.28 }}>
             <img src="images/Callisto Logo.png" alt="" />
             <Box display="flex" flexDirection="column">
               <Box component="span" fontSize="16px" lineHeight="19px">
@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
               </Box>
             </Box>
           </Box>
-          <Box component="div" color="white" style={{ gridRowGap: 46.38 }}>
+          <Box component="div" color="white" style={{ rowGap: 46.38 }}>
             <JoinText>Resources</JoinText>
             <List>
               <span>FAQ</span>
@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
               <span>Community Guidelines</span>
             </List>
           </Box>
-          <Box component="div" color="white" style={{ gridRowGap: 46.38 }}>
+          <Box component="div" color="white" style={{ rowGap: 46.38 }}>
             <JoinText>Callisto Network</JoinText>
             <List>
               <span>Partners</span>
@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
               <span>Contact us</span>
             </List>
           </Box>
-          <Box component="div" color="white" style={{ gridRowGap: 33.12 }}>
+          <Box component="div" color="white" style={{ rowGap: 33.12 }}>
             <JoinText>Join our community</JoinText>
             <Socials>
               <img src="images/Facebook.svg" alt="" />
@@ -75,7 +75,8 @@ const List = styled(Box)`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 20px;
+  column-gap: 20px;
+  row-gap: 20px;
   font-size: 16px;
   line-height: 15px;
   letter-spacing: 0.2px;
@@ -105,7 +106,8 @@ const Head = styled(Box)`
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 64px;
+  column-gap: 64px;
+  row-gap: 64px;
   > div {
     display: flex;
     flex-direction: column;
@@ -117,7 +119,8 @@ const Head = styled(Box)`
 `;
 
 const CopyrightBox = styled(Box)`
-  gap: 9px;
+  column-gap: 9px;
+  row-gap: 9px;
   font-size: 16px;
   line-height: 100%;
   letter-spacing: -0.5px;

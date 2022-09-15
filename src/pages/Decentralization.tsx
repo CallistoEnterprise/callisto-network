@@ -188,7 +188,7 @@ const Pagination = styled(Box)`
   bottom: 141.92px;
   left: 163.96px;
   display: flex;
-  gap: 23px;
+  column-gap: 23px;
   transition: 1s;
   @media (max-width: 768px) {
     bottom: 30px;
