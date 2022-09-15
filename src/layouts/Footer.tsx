@@ -13,7 +13,13 @@ const Footer: React.FC = () => {
               <Box component="span" fontSize="16px" lineHeight="19px">
                 All rights reserved by
               </Box>
-              <Box component="span" mt="4.5px" fontSize="17px" lineHeight="21px" fontWeight="700">
+              <Box
+                component="span"
+                mt="4.5px"
+                fontSize="17px"
+                lineHeight="21px"
+                fontWeight="700"
+              >
                 Callisto Network
               </Box>
             </Box>
@@ -62,7 +68,13 @@ const Footer: React.FC = () => {
               d="M7.3499 12.0219C8.65201 12.0219 9.76164 11.5577 10.4976 10.6972L9.54651 9.79134C8.96905 10.4254 8.25572 10.7311 7.42916 10.7311C5.78737 10.7311 4.59848 9.57621 4.59848 7.94574C4.59848 6.31527 5.78737 5.16035 7.42916 5.16035C8.25572 5.16035 8.96905 5.46607 9.54651 6.08882L10.4976 5.19432C9.76164 4.33379 8.65201 3.86956 7.36122 3.86956C4.92684 3.86956 3.1152 5.57929 3.1152 7.94574C3.1152 10.3122 4.92684 12.0219 7.3499 12.0219Z"
               fill="white"
             />
-            <circle cx="7.11698" cy="8.02567" r="6.76314" stroke="white" strokeWidth="0.70767" />
+            <circle
+              cx="7.11698"
+              cy="8.02567"
+              r="6.76314"
+              stroke="white"
+              strokeWidth="0.70767"
+            />
           </svg>
           <span>All rights reserved by Callisto Network</span>
         </CopyrightBox>
@@ -82,9 +94,8 @@ const List = styled(Box)`
   > span {
     cursor: pointer;
   }
-  >span+span {
+  > span + span {
     margin-top: 20px;
-    margin-left: 20px;
   }
 `;
 
@@ -108,12 +119,13 @@ const Head = styled(Box)`
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
-  column-gap: 64px;
-  row-gap: 64px;
   > div {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+  }
+  > div + div {
+    margin-top: 64px;
   }
   > div:first-of-type > span {
     font-family: Gilroy !important;
@@ -121,12 +133,13 @@ const Head = styled(Box)`
 `;
 
 const CopyrightBox = styled(Box)`
-  column-gap: 9px;
-  row-gap: 9px;
   font-size: 16px;
   line-height: 100%;
   letter-spacing: -0.5px;
   color: #ffffff;
+  >span {
+    margin-left: 9px;
+  }
   @media (max-width: 400px) {
     align-items: flex-start !important;
   }
