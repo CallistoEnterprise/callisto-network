@@ -188,11 +188,13 @@ const Pagination = styled(Box)`
   bottom: 141.92px;
   left: 163.96px;
   display: flex;
-  column-gap: 23px;
   transition: 1s;
   @media (max-width: 768px) {
     bottom: 30px;
     left: 40px;
+  }
+  >div+div {
+    margin-left: 23px;
   }
   > div {
     cursor: pointer;
