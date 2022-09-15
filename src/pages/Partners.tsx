@@ -23,7 +23,7 @@ const Partners: React.FC<any> = () => {
       <Box>
         <img src="images/Earth_Partners.png" alt="" />
         <Pictures>
-          <Carousel delay={6000} mode="fade" divStyle={{ height: 300 }}>
+          <Carousel delay={3000} mode="fade" divStyle={{ height: 300 }}>
             {arr.map((url, i) => (
               <img key={i} src={url} alt="asdada" />
             ))}

@@ -48,24 +48,6 @@ const Footer: React.FC = () => {
               <img src="images/Youtube.svg" alt="" />
             </Socials>
           </Box>
-          <Box component="div" style={{ gridRowGap: 59.38 }}>
-            <JoinText>Subscribe to our newsletter</JoinText>
-            <Input>
-              <input placeholder="Your email" />
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="10"
-                height="17"
-                viewBox="0 0 10 17"
-                fill="none"
-              >
-                <path
-                  d="M1.58235 16.4812C1.4629 16.4818 1.34448 16.459 1.2339 16.4138C1.12331 16.3686 1.02273 16.3021 0.937916 16.2179C0.852843 16.1336 0.785319 16.0332 0.739239 15.9226C0.693158 15.812 0.669434 15.6933 0.669434 15.5735C0.669434 15.4537 0.693158 15.335 0.739239 15.2244C0.785319 15.1138 0.852843 15.0134 0.937916 14.9291L7.5638 8.31226L0.937916 1.69545C0.767002 1.52454 0.670983 1.29273 0.670983 1.05102C0.670983 0.931335 0.694556 0.812824 0.740356 0.702252C0.786157 0.591679 0.853288 0.491211 0.937916 0.406582C1.02254 0.321954 1.12301 0.254823 1.23359 0.209023C1.34416 0.163222 1.46267 0.139648 1.58235 0.139648C1.82406 0.139648 2.05587 0.235667 2.22679 0.406582L9.48803 7.66783C9.5731 7.7522 9.64063 7.85259 9.68671 7.9632C9.73279 8.0738 9.75651 8.19244 9.75651 8.31226C9.75651 8.43208 9.73279 8.55072 9.68671 8.66132C9.64063 8.77193 9.5731 8.87232 9.48803 8.95669L2.22679 16.2179C2.14198 16.3021 2.04139 16.3686 1.93081 16.4138C1.82022 16.459 1.70181 16.4818 1.58235 16.4812Z"
-                  fill="#BAB1B1"
-                />
-              </svg>
-            </Input>
-          </Box>
         </Head>
         <Box width="100%" height="1px" bgcolor="white" mt="62.84px" />
         <CopyrightBox display="flex" alignItems="center" mt="22.68px">
@@ -88,27 +70,6 @@ const Footer: React.FC = () => {
     </StyledContainer>
   );
 };
-
-const Input = styled(Box)`
-  display: flex;
-  align-items: center;
-  background: #ffffff;
-  border-radius: 89px;
-  padding: 12.42px 22.49px 12.42px 27.09px;
-  > input {
-    border: none;
-    outline: none;
-    flex: 1;
-    font-weight: 500;
-    font-size: 19.1883px;
-    line-height: 23px;
-    letter-spacing: -0.05em;
-    color: black;
-    &::placeholder {
-      color: #bab1b1;
-    }
-  }
-`;
 
 const List = styled(Box)`
   display: flex;
