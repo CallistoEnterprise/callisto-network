@@ -48,7 +48,7 @@ const Decentralization: React.FC<any> = ({
     }
   }, [next, section1, section2]);
   const click = (pageNext: any) => {
-    setFade(false)
+    setFade(false);
     if (!playing) setPage(pageNext);
   };
   const wheel = (e: any) => {
@@ -73,7 +73,12 @@ const Decentralization: React.FC<any> = ({
     }
   };
   return (
-    <StyledContainer next={next ? 1 : 0} onWheel={wheel} onTouchStart={touchStart} onTouchEnd={touchEnd}>
+    <StyledContainer
+      next={next ? 1 : 0}
+      onWheel={wheel}
+      onTouchStart={touchStart}
+      onTouchEnd={touchEnd}
+    >
       <img src="images/Earth.png" alt="" />
       <video src="videos/Stars.webm" autoPlay muted loop />
       <video
@@ -193,7 +198,7 @@ const Pagination = styled(Box)`
     bottom: 30px;
     left: 40px;
   }
-  >div+div {
+  > div + div {
     margin-left: 23px;
   }
   > div {

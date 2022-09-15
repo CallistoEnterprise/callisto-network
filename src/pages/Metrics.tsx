@@ -106,7 +106,7 @@ const Metric1 = styled(Box)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  >div+div {
+  > div + div {
     margin-top: 8.83px;
   }
   @media (max-width: 1700px) {
@@ -125,7 +125,7 @@ const Metric2 = styled(Box)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  >div+div {
+  > div + div {
     margin-top: 8.83px;
   }
   @media (max-width: 1700px) {
@@ -144,7 +144,7 @@ const Metric3 = styled(Box)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  >div+div {
+  > div + div {
     margin-top: 8.83px;
   }
   @media (max-width: 768px) {

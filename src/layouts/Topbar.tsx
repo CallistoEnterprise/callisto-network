@@ -65,8 +65,8 @@ const Topbar: React.FC = () => {
                     <Box>
                       <Text1>Soy Bridge</Text1>
                       <Text2>
-                        Soy Bridge alows for moving assets from the leading blockchains to Callisto
-                        Network
+                        Soy Bridge alows for moving assets from the leading
+                        blockchains to Callisto Network
                       </Text2>
                     </Box>
                   </Box>
@@ -75,7 +75,8 @@ const Topbar: React.FC = () => {
                     <Box>
                       <Text1>Soy Finance</Text1>
                       <Text2>
-                        Soy Finance is a DeFi platform built with the highest security standards
+                        Soy Finance is a DeFi platform built with the highest
+                        security standards
                       </Text2>
                     </Box>
                   </Box>
@@ -126,8 +127,8 @@ const Topbar: React.FC = () => {
                     <Box>
                       <Text1>Callisto Network Forum</Text1>
                       <Text2>
-                        A place where Callistonians meet and discuss all things related to the
-                        ecosystem
+                        A place where Callistonians meet and discuss all things
+                        related to the ecosystem
                       </Text2>
                     </Box>
                   </Box>
@@ -135,7 +136,9 @@ const Topbar: React.FC = () => {
                     <img src="images/Astronaut.svg" alt="" />
                     <Box>
                       <Text1>Callistonians Program</Text1>
-                      <Text2>Get rewarded for your contribution to Callisto Network</Text2>
+                      <Text2>
+                        Get rewarded for your contribution to Callisto Network
+                      </Text2>
                     </Box>
                   </Box>
                 </MenuItems>
@@ -167,23 +170,24 @@ const Topbar: React.FC = () => {
 const MenuItems = styled(Box)`
   display: flex;
   flex-direction: column;
-  column-gap: 25.39px;
-  row-gap: 25.39px;
+  > div + div {
+    margin-top: 25.39px;
+  }
   > div {
     display: flex;
     align-items: center;
-    column-gap: 20px;
-    row-gap: 20px;
     > img {
       width: 34.55px;
       min-width: 34.55px;
       height: 34.55px;
     }
     > div {
+      margin-left: 20px;
       display: flex;
       flex-direction: column;
-      column-gap: 3.59px;
-      row-gap: 3.59px;
+      > div + div {
+        margin-top: 3.59px;
+      }
     }
   }
 `;
@@ -222,7 +226,9 @@ const MenuList = styled(Box)`
   padding: 25.61px 0 25.61px 25.64px;
   display: flex;
   flex-direction: column;
-  row-gap: 30.69px;
+  > div + div {
+    margin-top: 30.69px;
+  }
   width: 360px;
   &:before {
     content: "";
@@ -257,14 +263,12 @@ const MenuList = styled(Box)`
 // `;
 
 const PCMenu = styled(Box)`
-  column-gap: 46.67px;
-  row-gap: 46.67px;
   font-size: 18px;
   line-height: 22px;
   letter-spacing: -0.05em;
   color: white;
-  @media (max-width: 1440px) {
-    display: none !important;
+  > span + span {
+    margin-left: 46.67px;
   }
   > span {
     cursor: pointer;
@@ -281,6 +285,9 @@ const PCMenu = styled(Box)`
         opacity: 1;
       }
     }
+  }
+  @media (max-width: 1440px) {
+    display: none !important;
   }
 `;
 
@@ -299,9 +306,6 @@ const StyledContainer = styled(Box)`
 
     @media (max-width: 768px) {
       padding: 20px 32px;
-    }
-    > div {
-      column-gap: 44.17px;
     }
   }
 `;

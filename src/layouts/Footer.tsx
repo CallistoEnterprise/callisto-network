@@ -130,23 +130,23 @@ const Head = styled(Box)`
   > div:first-of-type > span {
     font-family: Gilroy !important;
   }
-  >div:first-of-type {
-    >*+* {
+  > div:first-of-type {
+    > * + * {
       margin-top: 30.28px;
     }
   }
-  >div:nth-of-type(2) {
-    >*+* {
+  > div:nth-of-type(2) {
+    > * + * {
       margin-top: 46.38px;
     }
   }
-  >div:nth-of-type(3) {
-    >*+* {
+  > div:nth-of-type(3) {
+    > * + * {
       margin-top: 46.38px;
     }
   }
-  >div:nth-of-type(4) {
-    >*+* {
+  > div:nth-of-type(4) {
+    > * + * {
       margin-top: 33.12px;
     }
   }
@@ -157,7 +157,7 @@ const CopyrightBox = styled(Box)`
   line-height: 100%;
   letter-spacing: -0.5px;
   color: #ffffff;
-  >span {
+  > span {
     margin-left: 9px;
   }
   @media (max-width: 400px) {
