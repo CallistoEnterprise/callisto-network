@@ -75,14 +75,16 @@ const List = styled(Box)`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  column-gap: 20px;
-  row-gap: 20px;
   font-size: 16px;
   line-height: 15px;
   letter-spacing: 0.2px;
   color: #ffffff;
   > span {
     cursor: pointer;
+  }
+  >span+span {
+    margin-top: 20px;
+    margin-left: 20px;
   }
 `;
 
