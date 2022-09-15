@@ -150,6 +150,11 @@ const Head = styled(Box)`
       margin-top: 33.12px;
     }
   }
+  @media (max-width: 768px) {
+    > div + div {
+      margin-top: 32px;
+    }
+  }
 `;
 
 const CopyrightBox = styled(Box)`
@@ -177,8 +182,7 @@ const StyledContainer = styled(Box)`
     margin-left: auto;
     margin-right: auto;
     @media (max-width: 768px) {
-      padding-left: 32px;
-      padding-right: 32px;
+      padding: 32px;
     }
   }
 `;

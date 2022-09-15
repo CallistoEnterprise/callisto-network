@@ -112,6 +112,7 @@ const StyledContainer = styled(Box)`
   position: relative;
   height: 960px;
   background: url("images/Sky.png") no-repeat;
+  background-size: cover;
   @media (max-width: 768px) {
     height: 480px;
   }
