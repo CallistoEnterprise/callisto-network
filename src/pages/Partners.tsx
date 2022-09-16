@@ -113,7 +113,7 @@ const StyledContainer = styled(Box)`
   height: 960px;
   background: url("images/Sky.png") no-repeat;
   @media (max-width: 768px) {
-    height: 480px;
+    height: 100vh;
   }
   > div:first-of-type {
     position: absolute;
