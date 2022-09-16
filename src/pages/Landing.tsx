@@ -75,7 +75,8 @@ const Landing: React.FC = () => {
         setFade(true);
       }
       setPage(pageNext);
-      if (page === 4 && pageNext !== 4) document.body.scrollIntoView({ behavior: "smooth" });
+      if (page === 4 && pageNext !== 4)
+        document.body.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -105,7 +106,11 @@ const Landing: React.FC = () => {
   };
 
   return (
-    <StyledContainer onWheel={wheel} onTouchStart={touchStart} onTouchEnd={touchEnd}>
+    <StyledContainer
+      onWheel={wheel}
+      onTouchStart={touchStart}
+      onTouchEnd={touchEnd}
+    >
       <main>
         <section ref={refs[0]}>
           <Decentralization
@@ -164,12 +169,11 @@ const Pagination = styled(Box)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 27.78px;
   top: 50%;
   right: 170px;
   transform: translateY(-50%);
-  @media (max-width: 1000px) {
-    display: none;
+  > div + div {
+    margin-top: 27.78px;
   }
   > div {
     width: 5.6px;
@@ -178,6 +182,9 @@ const Pagination = styled(Box)`
     background: #d9d9d9;
     border-radius: 50%;
   }
+  @media (max-width: 1000px) {
+    display: none;
+  }
 `;
 
 const StyledContainer = styled(Box)`
@@ -185,7 +192,7 @@ const StyledContainer = styled(Box)`
     position: relative;
     height: 960px;
     @media (max-width: 768px) {
-      height: 480px;
+      height: 88vh;
     }
     > section {
       position: absolute;

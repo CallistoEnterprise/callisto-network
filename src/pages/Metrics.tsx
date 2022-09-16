@@ -106,7 +106,9 @@ const Metric1 = styled(Box)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8.83px;
+  > div + div {
+    margin-top: 8.83px;
+  }
   @media (max-width: 1700px) {
     left: 200px;
   }
@@ -123,7 +125,9 @@ const Metric2 = styled(Box)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8.83px;
+  > div + div {
+    margin-top: 8.83px;
+  }
   @media (max-width: 1700px) {
     right: 200px;
   }
@@ -140,7 +144,9 @@ const Metric3 = styled(Box)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8.83px;
+  > div + div {
+    margin-top: 8.83px;
+  }
   @media (max-width: 768px) {
     bottom: 40px;
   }
@@ -192,7 +198,7 @@ const StyledContainer = styled(Box)`
   position: relative;
   height: 960px;
   @media (max-width: 768px) {
-    height: 480px;
+    height: 88vh;
   }
   > video:first-of-type {
     position: absolute;

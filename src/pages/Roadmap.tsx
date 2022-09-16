@@ -24,7 +24,7 @@ const StyledContainer = styled(Box)`
   height: 960px;
   z-index: 1;
   @media (max-width: 768px) {
-    height: 480px;
+    height: 88vh;
   }
   > video:first-of-type {
     position: absolute;
