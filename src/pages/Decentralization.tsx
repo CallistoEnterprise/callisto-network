@@ -309,7 +309,7 @@ const StyledContainer = styled(Box)<any>`
     background-size: 100% 175%;
   }
   @media (max-width: 768px) {
-    height: 480px;
+    height: 90vh;
     padding-top: 100px;
     padding-left: 40px;
   }
