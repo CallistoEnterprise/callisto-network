@@ -192,7 +192,7 @@ const StyledContainer = styled(Box)`
     position: relative;
     height: 960px;
     @media (max-width: 768px) {
-      height: 84vh;
+      height: 88vh;
     }
     > section {
       position: absolute;
