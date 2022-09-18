@@ -395,19 +395,27 @@ const MenuList = styled(Box)`
 
 const MobileMenu = styled(Box)`
   position: absolute;
-  top: 100%;
+  top: calc(100% + 20px);
   right: 0;
   width: max-content;
-  background: white;
-  border: 1px solid grey;
+  background: rgba(4, 31, 48, 0.81);
+  border: 2px solid #d9d9d9;
+  border-radius: 10px;
+  padding: 25.61px 25.64px;
   > div {
     cursor: pointer;
-    padding: 20px;
-    color: black;
     transition: 0.3s;
+    font-weight: 600;
+    font-size: 20.6761px;
+    line-height: 25px;
+    letter-spacing: -0.05em;
+    color: white;
     &:hover {
       background: lightgrey;
     }
+  }
+  >div+div {
+    margin-top: 20px;
   }
 `;
 
