@@ -150,7 +150,7 @@ const Content = styled(Box)`
   margin-top: 153.22px;
   position: absolute;
   width: calc(100vw - 316.34px);
-  transition: 1s;
+  transition: .4s;
   @media (max-width: 1600px) {
     margin-top: 50px;
   }
@@ -161,7 +161,7 @@ const Content = styled(Box)`
 `;
 
 const Page = styled(Box)<any>`
-  transition: 1s;
+  transition: .4s;
   cursor: pointer;
   ${({ active }: any) => active && "transform: scale(2.346);"}
 `;
@@ -172,7 +172,7 @@ const Pagination = styled(Box)`
   bottom: 141.92px;
   left: 163.96px;
   display: flex;
-  transition: 1s;
+  transition: .4s;
   > div + div {
     margin-left: 23px;
   }
@@ -239,7 +239,7 @@ const Section2 = styled(Box)`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  transition: 1s;
+  transition: .4s;
   height: 100%;
   position: relative;
   z-index: 2;
@@ -248,7 +248,7 @@ const Section2 = styled(Box)`
     top: calc(50% - 82px);
     right: -80px;
     transform: translateY(-50%);
-    transition: 1s;
+    transition: .4s;
     @media (max-width: 1600px) {
       top: unset;
       bottom: -70px;
@@ -289,7 +289,7 @@ const CuttingText = styled(Box)`
   bottom: 63.56px;
   left: 50%;
   transform: translateX(-50%);
-  transition: 1s;
+  transition: .4s;
   font-weight: 700;
   font-size: 35px;
   line-height: 43px;
@@ -325,7 +325,7 @@ const StyledContainer = styled(Box)<any>`
     max-width: unset;
     width: 123%;
     bottom: 0;
-    transition: 1s;
+    transition: .4s;
     z-index: 1;
     right: ${({ next }: any) => (next ? -23 : 0)}%;
     @media (max-width: 1000px) {
@@ -352,7 +352,7 @@ const StyledContainer = styled(Box)<any>`
     left: 50%;
     transform: translate(-50%, calc(-50% - 63.56px));
     z-index: 2;
-    transition: 1s;
+    transition: .4s;
     @media (max-width: 1024px) {
       width: 50%;
     }

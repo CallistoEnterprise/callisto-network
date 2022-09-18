@@ -56,9 +56,9 @@ const Metrics: React.FC<any> = ({ active }) => {
       tmp.netwok_hashrate = parseFloat(result.netwok_hashrate.replace(" GH/s", ""));
       console.log(tmp);
       setMetricData(tmp);
-      setTimeout(() => setOpen1(true), 2000);
-      setTimeout(() => setOpen2(true), 3000);
-      setTimeout(() => setOpen3(true), 4000);
+      setTimeout(() => setOpen1(true), 1000);
+      setTimeout(() => setOpen2(true), 1500);
+      setTimeout(() => setOpen3(true), 2000);
       start1(tmp.monthly_transactions);
       start2(tmp.netwok_hashrate);
       start3(tmp.frozen_coins);
@@ -68,11 +68,11 @@ const Metrics: React.FC<any> = ({ active }) => {
   return (
     <StyledContainer>
       <video src="videos/Bg_H.mp4" autoPlay muted loop />
-      <Fade in={open3} timeout={1500}>
+      <Fade in={open3} timeout={500}>
         <video src="videos/Logo-Anim_VP9.webm" autoPlay muted loop />
       </Fade>
       <Title>Callisto Network Metrics</Title>
-      <Fade in={open1} timeout={1500}>
+      <Fade in={open1} timeout={500}>
         <Metric1>
           <Text1>Monthly Transaction</Text1>
           <Text2>
@@ -80,7 +80,7 @@ const Metrics: React.FC<any> = ({ active }) => {
           </Text2>
         </Metric1>
       </Fade>
-      <Fade in={open3} timeout={1500}>
+      <Fade in={open3} timeout={500}>
         <Metric2>
           <Text1>Network Hashrate</Text1>
           <Text2>
@@ -88,7 +88,7 @@ const Metrics: React.FC<any> = ({ active }) => {
           </Text2>
         </Metric2>
       </Fade>
-      <Fade in={open2} timeout={1500}>
+      <Fade in={open2} timeout={500}>
         <Metric3>
           <Text1>Frozen Coins</Text1>
           <Text2>
