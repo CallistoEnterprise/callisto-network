@@ -60,6 +60,7 @@ const Metrics: React.FC<any> = ({ active }) => {
       start1();
       start2();
       start3();
+      alert()
     }
   }, [active, start1, start2, start3]);
 
