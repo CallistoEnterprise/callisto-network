@@ -140,6 +140,7 @@ const StyledContainer = styled(Box)`
   @media (max-width: 768px) {
     height: 1091px;
     background: url("images/Roadmap_BG.png") no-repeat;
+    background-size: cover;
     padding-top: 123.74px;
     > video:first-of-type {
       display: none;
