@@ -1,79 +1,173 @@
-import React from "react";
+import React, { useState, useMemo } from "react";
 import styled from "@mui/styled-engine-sc";
-import { Box } from "@mui/material";
+import { Box, Collapse } from "@mui/material";
+import useWindowDimensions from "hooks/useDimensions";
 
 const Footer: React.FC = () => {
+  const [resourcesOpen, setResourcesOpen] = useState(false);
+  const [networkOpen, setNetworkOpen] = useState(false);
+  const screenWidth = useWindowDimensions().width;
+  const [isMobile, setIsMobile] = useState(false);
+
+  useMemo(() => {
+    if (screenWidth > 768) {
+      setResourcesOpen(true);
+      setNetworkOpen(true);
+      setIsMobile(false);
+    } else { 
+      setResourcesOpen(false);
+      setNetworkOpen(false);
+      setIsMobile(true);
+    }
+  }, [screenWidth]);
+
   return (
     <StyledContainer>
       <Box display="flex" flexDirection="column" alignItems="flex-start">
-        <Head display="flex">
+        <Head display="flex" open1={resourcesOpen?1:0} open2={networkOpen?1:0}>
           <Box component="div" color="white">
             <img src="images/Callisto Logo.png" alt="" />
             <Box display="flex" flexDirection="column">
               <Box component="span" fontSize="16px" lineHeight="19px">
                 All rights reserved by
               </Box>
-              <Box component="span" mt="4.5px" fontSize="17px" lineHeight="21px" fontWeight="700">
+              <Box
+                component="span"
+                mt="4.5px"
+                fontSize="17px"
+                lineHeight="21px"
+                fontWeight="700"
+              >
                 Callisto Network
               </Box>
             </Box>
           </Box>
           <Box component="div" color="white">
-            <JoinText>Resources</JoinText>
-            <List>
-              <a target="_blank" rel="noreferrer" href="https://callisto.network/faq/">
-                FAQ
-              </a>
-              <a target="_blank" rel="noreferrer" href="https://callisto.network/callisto-airdrop/">
-                Airdrop
-              </a>
-              <a target="_blank" rel="noreferrer" href="https://callisto.network/community-guidelines/">
-                Community Guidelines
-              </a>
-            </List>
+            <JoinText
+              onClick={() => isMobile && setResourcesOpen(!resourcesOpen)}
+            >
+              Resources
+            </JoinText>
+            <Collapse timeout={500} in={resourcesOpen}>
+              <List>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://callisto.network/faq/"
+                >
+                  FAQ
+                </a>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://callisto.network/callisto-airdrop/"
+                >
+                  Airdrop
+                </a>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://callisto.network/community-guidelines/"
+                >
+                  Community Guidelines
+                </a>
+              </List>
+            </Collapse>
           </Box>
           <Box component="div" color="white">
-            <JoinText>Callisto Network</JoinText>
-            <List>
-              <a target="_blank" rel="noreferrer" href="https://callisto.network/partners/">
-                Partners
-              </a>
-              <a target="_blank" rel="noreferrer" href="https://github.com/EthereumCommonwealth/Callisto-Website">
-                GitHub
-              </a>
-              <a target="_blank" rel="noreferrer" href="https://github.com/EthereumCommonwealth/Callisto-Media-Kit">
-                Media Kit
-              </a>
-              <a target="_blank" rel="noreferrer" href="https://callisto.network/contact-us/">
-                Contact us
-              </a>
-            </List>
+            <JoinText onClick={() => isMobile && setNetworkOpen(!networkOpen)}>
+              Callisto Network
+            </JoinText>
+            <Collapse timeout={500} in={networkOpen}>
+              <List>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://callisto.network/partners/"
+                >
+                  Partners
+                </a>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://github.com/EthereumCommonwealth/Callisto-Website"
+                >
+                  GitHub
+                </a>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://github.com/EthereumCommonwealth/Callisto-Media-Kit"
+                >
+                  Media Kit
+                </a>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://callisto.network/contact-us/"
+                >
+                  Contact us
+                </a>
+              </List>
+            </Collapse>
           </Box>
           <Box component="div" color="white">
             <JoinText>Join our community</JoinText>
             <Socials>
-              <a target="_blank" rel="noreferrer" href="https://www.facebook.com/callistonetwork">
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://www.facebook.com/callistonetwork"
+              >
                 <img src="images/Facebook.svg" alt="" />
               </a>
-              <a target="_blank" rel="noreferrer" href="https://bitcointalk.org/index.php?topic=3380156.0">
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://bitcointalk.org/index.php?topic=3380156.0"
+              >
                 <img src="images/Btc.svg" alt="" />
               </a>
-              <a target="_blank" rel="noreferrer" href="https://www.instagram.com/callisto.network">
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://www.instagram.com/callisto.network"
+              >
                 <img src="images/Insta.svg" alt="" />
               </a>
-              <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/company/callisto-network/">
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://www.linkedin.com/company/callisto-network/"
+              >
                 <img src="images/Link.svg" alt="" />
               </a>
-              <a target="_blank" rel="noreferrer" href="https://www.reddit.com/r/CallistoCrypto/">
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://www.reddit.com/r/CallistoCrypto/"
+              >
                 <img src="images/Red.svg" alt="" />
               </a>
-              <a target="_blank" rel="noreferrer" href="https://t.me/CallistoNet">
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://t.me/CallistoNet"
+              >
                 <img src="images/Telegram.svg" alt="" />
               </a>
-              <a target="_blank" rel="noreferrer" href="https://twitter.com/CallistoSupport">
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://twitter.com/CallistoSupport"
+              >
                 <img src="images/Twitter.svg" alt="" />
               </a>
-              <a target="_blank" rel="noreferrer" href="https://www.youtube.com/c/CallistoNetwork">
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://www.youtube.com/c/CallistoNetwork"
+              >
                 <img src="images/Youtube.svg" alt="" />
               </a>
             </Socials>
@@ -92,7 +186,13 @@ const Footer: React.FC = () => {
               d="M7.3499 12.0219C8.65201 12.0219 9.76164 11.5577 10.4976 10.6972L9.54651 9.79134C8.96905 10.4254 8.25572 10.7311 7.42916 10.7311C5.78737 10.7311 4.59848 9.57621 4.59848 7.94574C4.59848 6.31527 5.78737 5.16035 7.42916 5.16035C8.25572 5.16035 8.96905 5.46607 9.54651 6.08882L10.4976 5.19432C9.76164 4.33379 8.65201 3.86956 7.36122 3.86956C4.92684 3.86956 3.1152 5.57929 3.1152 7.94574C3.1152 10.3122 4.92684 12.0219 7.3499 12.0219Z"
               fill="white"
             />
-            <circle cx="7.11698" cy="8.02567" r="6.76314" stroke="white" strokeWidth="0.70767" />
+            <circle
+              cx="7.11698"
+              cy="8.02567"
+              r="6.76314"
+              stroke="white"
+              strokeWidth="0.70767"
+            />
           </svg>
           <span>
             All rights reserved by <span>Callisto Network</span>
@@ -148,7 +248,7 @@ const JoinText = styled(Box)`
   color: #ffffff;
 `;
 
-const Head = styled(Box)`
+const Head = styled(Box)<any>`
   width: 100%;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -194,15 +294,23 @@ const Head = styled(Box)`
       }
     }
 
-    > div:nth-of-type(2),
-    > div:nth-of-type(3) {
+    > div:nth-of-type(2) {
       > * + * {
-        margin-top: 24px;
+        transition: .5s;
+        margin-top: ${({ open1 }: any) => (open1 ? 24 : 0)}px;
       }
     }
+    > div:nth-of-type(3) {
+      > * + * {
+        transition: .5s;
+        margin-top: ${({ open2 }: any) => (open2 ? 24 : 0)}px;
+      }
+    }
+
     > div:nth-of-type(4) {
       align-self: center;
       align-items: center;
+      margin-top: 67.77px;
       > * + * {
         margin-top: 23.09px;
       }

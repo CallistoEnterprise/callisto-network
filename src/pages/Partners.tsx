@@ -134,6 +134,9 @@ const TitleMobile = styled(Box)`
   @media (min-width: 1401px) {
     display: none;
   }
+  @media (width: 390px) and (height: 844px) {
+    left: 85%;
+  }
 `;
 
 const StyledContainer = styled(Box)`
