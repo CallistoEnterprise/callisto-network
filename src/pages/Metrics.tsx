@@ -15,7 +15,7 @@ const Metrics: React.FC<any> = ({ active }) => {
   const { reset: reset1, start: start1 } = useCountUp({
     ref: metric1,
     start: 0,
-    end: metricData.monthly_transactions,
+    end: 5555,
     delay: 0,
     duration: 5,
     separator: ",",
