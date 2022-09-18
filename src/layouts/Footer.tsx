@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
       setResourcesOpen(true);
       setNetworkOpen(true);
       setIsMobile(false);
-    } else { 
+    } else {
       setResourcesOpen(false);
       setNetworkOpen(false);
       setIsMobile(true);
@@ -24,7 +24,11 @@ const Footer: React.FC = () => {
   return (
     <StyledContainer>
       <Box display="flex" flexDirection="column" alignItems="flex-start">
-        <Head display="flex" open1={resourcesOpen?1:0} open2={networkOpen?1:0}>
+        <Head
+          display="flex"
+          open1={resourcesOpen ? 1 : 0}
+          open2={networkOpen ? 1 : 0}
+        >
           <Box component="div" color="white">
             <img src="images/Callisto Logo.png" alt="" />
             <Box display="flex" flexDirection="column">
@@ -43,10 +47,11 @@ const Footer: React.FC = () => {
             </Box>
           </Box>
           <Box component="div" color="white">
-            <JoinText
-              onClick={() => isMobile && setResourcesOpen(!resourcesOpen)}
-            >
+            <JoinText>
               Resources
+              <Box
+                onClick={() => isMobile && setResourcesOpen(!resourcesOpen)}
+              />
             </JoinText>
             <Collapse timeout={500} in={resourcesOpen}>
               <List>
@@ -75,8 +80,9 @@ const Footer: React.FC = () => {
             </Collapse>
           </Box>
           <Box component="div" color="white">
-            <JoinText onClick={() => isMobile && setNetworkOpen(!networkOpen)}>
+            <JoinText>
               Callisto Network
+              <Box onClick={() => isMobile && setNetworkOpen(!networkOpen)} />
             </JoinText>
             <Collapse timeout={500} in={networkOpen}>
               <List>
@@ -246,6 +252,9 @@ const JoinText = styled(Box)`
   line-height: 15px;
   letter-spacing: 0.2px;
   color: #ffffff;
+  > div {
+    cursor: pointer;
+  }
 `;
 
 const Head = styled(Box)<any>`
@@ -295,14 +304,42 @@ const Head = styled(Box)<any>`
     }
 
     > div:nth-of-type(2) {
+      width: 100%;
+      > div:first-of-type {
+        width: 100%;
+        position: relative;
+        > div {
+          position: absolute;
+          top: 50%;
+          right: 0;
+          transform: translateY(-50%);
+          width: 25.89px;
+          height: 1px;
+          background: white;
+        }
+      }
       > * + * {
-        transition: .5s;
+        transition: 0.5s;
         margin-top: ${({ open1 }: any) => (open1 ? 24 : 0)}px;
       }
     }
     > div:nth-of-type(3) {
+      width: 100%;
+      > div:first-of-type {
+        width: 100%;
+        position: relative;
+        > div {
+          position: absolute;
+          top: 50%;
+          right: 0;
+          transform: translateY(-50%);
+          width: 25.89px;
+          height: 1px;
+          background: white;
+        }
+      }
       > * + * {
-        transition: .5s;
+        transition: 0.5s;
         margin-top: ${({ open2 }: any) => (open2 ? 24 : 0)}px;
       }
     }
