@@ -12,7 +12,7 @@ const Metrics: React.FC<any> = ({ active }) => {
   const [open1, setOpen1] = useState(false);
   const [open2, setOpen2] = useState(false);
   const [open3, setOpen3] = useState(false);
-  const { update: start1 } = useCountUp({
+  const { update: start1, reset: reset1 } = useCountUp({
     ref: metric1,
     start: 0,
     end: metricData.monthly_transactions,
@@ -20,7 +20,7 @@ const Metrics: React.FC<any> = ({ active }) => {
     duration: 5,
     separator: ",",
   });
-  const { update: start2 } = useCountUp({
+  const { update: start2, reset: reset2 } = useCountUp({
     ref: metric2,
     start: 0,
     end: metricData.netwok_hashrate,
@@ -30,7 +30,7 @@ const Metrics: React.FC<any> = ({ active }) => {
     decimal: ".",
     decimals: 2,
   });
-  const { update: start3 } = useCountUp({
+  const { update: start3, reset: reset3 } = useCountUp({
     ref: metric3,
     start: 0,
     end: metricData.frozen_coins,
@@ -59,11 +59,14 @@ const Metrics: React.FC<any> = ({ active }) => {
       setTimeout(() => setOpen1(true), 1000);
       setTimeout(() => setOpen2(true), 1500);
       setTimeout(() => setOpen3(true), 2000);
+      reset1()
+      reset2()
+      reset3()
       start1(tmp.monthly_transactions);
       start2(tmp.netwok_hashrate);
       start3(tmp.frozen_coins);
     }
-  }, [active, start1, start2, start3]);
+  }, [active, reset1, reset2, reset3, start1, start2, start3]);
 
   return (
     <StyledContainer>
