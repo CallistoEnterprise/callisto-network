@@ -8,6 +8,7 @@ const Metrics: React.FC<any> = ({ active }) => {
   const metric1 = useRef(null);
   const metric2 = useRef(null);
   const metric3 = useRef(null);
+  const [monthly_transactions, setMonthly_transactions] = useState(0)
   const [metricData, setMetricData] = useState<any>({
     monthly_transactions: 0,
     netwok_hashrate: 0,
@@ -19,7 +20,7 @@ const Metrics: React.FC<any> = ({ active }) => {
   const { start: start1 } = useCountUp({
     ref: metric1,
     start: 0,
-    end: metricData.monthly_transactions,
+    end: monthly_transactions,
     delay: 0,
     duration: 5,
     separator: ",",
@@ -54,6 +55,7 @@ const Metrics: React.FC<any> = ({ active }) => {
       tmp.netwok_hashrate = parseFloat(result.netwok_hashrate.replace(" GH/s", ""));
       console.log(tmp)
       setMetricData(tmp);
+      setMonthly_transactions(tmp.monthly_transactions)
       setTimeout(() => setOpen1(true), 2000);
       setTimeout(() => setOpen2(true), 3000);
       setTimeout(() => setOpen3(true), 4000);
