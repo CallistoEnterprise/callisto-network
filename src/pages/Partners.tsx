@@ -79,6 +79,9 @@ const Pictures = styled(Box)`
   @media (max-width: 600px) {
     right: 75px;
   }
+  @media (width: 2312px) and (height: 1080px) {
+    right: 670px;
+  }
   @media (width: 912px) and (height: 1368px) {
     right: 530px;
   }
