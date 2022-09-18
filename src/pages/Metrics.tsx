@@ -8,14 +8,18 @@ const Metrics: React.FC<any> = ({ active }) => {
   const metric1 = useRef(null);
   const metric2 = useRef(null);
   const metric3 = useRef(null);
-  const [metricData, setMetricData] = useState<any>({});
+  const [metricData, setMetricData] = useState<any>({
+    monthly_transactions: 0,
+    netwok_hashrate: 0,
+    frozen_coins: 0,
+  });
   const [open1, setOpen1] = useState(false);
   const [open2, setOpen2] = useState(false);
   const [open3, setOpen3] = useState(false);
   const { reset: reset1, start: start1 } = useCountUp({
     ref: metric1,
     start: 0,
-    end: 5555,
+    end: metricData.monthly_transactions,
     delay: 0,
     duration: 5,
     separator: ",",
@@ -46,7 +50,7 @@ const Metrics: React.FC<any> = ({ active }) => {
       const {
         data: { result },
       } = await axios.get("https://cloe.deta.dev/clo_metrics");
-      let tmp = result;
+      let tmp = {...result};
       tmp.netwok_hashrate = parseFloat(result.netwok_hashrate.replace(" GH/s", ""));
       console.log(tmp)
       setMetricData(tmp);
