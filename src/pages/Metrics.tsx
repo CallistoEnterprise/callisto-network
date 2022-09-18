@@ -46,9 +46,9 @@ const Metrics: React.FC<any> = ({ active }) => {
       const {
         data: { result },
       } = await axios.get("https://cloe.deta.dev/clo_metrics");
-      console.log(result)
       let tmp = result;
       tmp.netwok_hashrate = parseFloat(result.netwok_hashrate.replace(" GH/s", ""));
+      console.log(tmp)
       setMetricData(tmp);
       setTimeout(() => setOpen1(true), 2000);
       setTimeout(() => setOpen2(true), 3000);
