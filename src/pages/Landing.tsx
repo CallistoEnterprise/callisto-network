@@ -51,7 +51,7 @@ const Landing: React.FC = () => {
           });
           refs[0].current.style.opacity = 1;
           setPlaying(false);
-        }, 1100);
+        }, 500);
       } else {
         setTimeout(() => {
           refs.forEach((x) => {
@@ -60,7 +60,7 @@ const Landing: React.FC = () => {
           });
           refs[page].current.style.opacity = 1;
           setPlaying(false);
-        }, 1100);
+        }, 500);
       }
     }
     if (window.pageYOffset === 0) disableBodyScroll(document.body);

@@ -20,7 +20,7 @@ const Decentralization: React.FC<any> = ({ next, page, setPage, setFade, landing
         refs[page].current.style.opacity = 1;
         videoRefs[page].current.style.opacity = 1;
         setPlaying(false);
-      }, 1100);
+      }, 500);
     }
   }, [page, refs, videoRefs]);
   useMemo(() => {
@@ -30,7 +30,7 @@ const Decentralization: React.FC<any> = ({ next, page, setPage, setFade, landing
       setTimeout(() => {
         section2.forEach((x) => (x.current.style.opacity = 1));
         setPlaying(false);
-      }, 1100);
+      }, 500);
     }
     if (next === false && !section1.some((x) => x.current === undefined)) {
       section2.forEach((x) => (x.current.style.opacity = 0));
@@ -38,7 +38,7 @@ const Decentralization: React.FC<any> = ({ next, page, setPage, setFade, landing
       setTimeout(() => {
         section1.forEach((x) => (x.current.style.opacity = 1));
         setPlaying(false);
-      }, 1100);
+      }, 500);
     }
   }, [next, section1, section2]);
   const click = (pageNext: any) => {

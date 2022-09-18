@@ -68,11 +68,11 @@ const Metrics: React.FC<any> = ({ active }) => {
   return (
     <StyledContainer>
       <video src="videos/Bg_H.mp4" autoPlay muted loop />
-      <Fade in={open3} timeout={3000}>
+      <Fade in={open3} timeout={1500}>
         <video src="videos/Logo-Anim_VP9.webm" autoPlay muted loop />
       </Fade>
       <Title>Callisto Network Metrics</Title>
-      <Fade in={open1} timeout={3000}>
+      <Fade in={open1} timeout={1500}>
         <Metric1>
           <Text1>Monthly Transaction</Text1>
           <Text2>
@@ -80,7 +80,7 @@ const Metrics: React.FC<any> = ({ active }) => {
           </Text2>
         </Metric1>
       </Fade>
-      <Fade in={open3} timeout={3000}>
+      <Fade in={open3} timeout={1500}>
         <Metric2>
           <Text1>Network Hashrate</Text1>
           <Text2>
@@ -88,7 +88,7 @@ const Metrics: React.FC<any> = ({ active }) => {
           </Text2>
         </Metric2>
       </Fade>
-      <Fade in={open2} timeout={3000}>
+      <Fade in={open2} timeout={1500}>
         <Metric3>
           <Text1>Frozen Coins</Text1>
           <Text2>

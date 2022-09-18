@@ -21,7 +21,7 @@ const Layout: React.FC<Props> = ({ children }: any) => {
         {children}
       </Body>
       <Footer />
-      <Fade in={loading} timeout={{ appear: 0, exit: 1500 }}>
+      <Fade in={loading} timeout={{ appear: 0, exit: 500 }}>
         <Loading bgcolor="rgb(12, 11, 13)">
           <video src="videos/d11.mp4" autoPlay muted onEnded={() => setLoading(false)} />
         </Loading>
