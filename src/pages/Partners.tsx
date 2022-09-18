@@ -28,8 +28,8 @@ const Partners: React.FC<any> = () => {
               <img key={i} src={url} alt="asdada" />
             ))}
           </Carousel>
+          <TitleMobile>Partners</TitleMobile>
         </Pictures>
-        <TitleMobile>Partners</TitleMobile>
       </Box>
       <Title>Partners</Title>
     </StyledContainer>
@@ -41,19 +41,6 @@ const Pictures = styled(Box)`
   top: 15%;
   right: 535px;
   width: 260px;
-  @media (max-width: 1000px) {
-    right: 435px;
-  }
-  @media (max-width: 800px) {
-    transform: scale(0.6);
-    right: 285px;
-  }
-  @media (max-width: 768px) {
-    top: unset; bottom: 25%;
-  }
-  @media (max-width: 600px) {
-    right: 50px;
-  }
   > div > div {
     overflow: unset !important;
     display: flex;
@@ -76,6 +63,22 @@ const Pictures = styled(Box)`
     transform: translateX(100px);
     stroke: white;
   }
+  @media (max-width: 1000px) {
+    right: 435px;
+  }
+  @media (max-width: 800px) {
+    right: 285px;
+  }
+  @media (max-width: 768px) {
+    top: unset;
+    bottom: 50%;
+    svg {
+      display: none;
+    }
+  }
+  @media (max-width: 600px) {
+    right: 50px;
+  }
 `;
 
 const Title = styled(Box)`
@@ -95,14 +98,14 @@ const Title = styled(Box)`
 
 const TitleMobile = styled(Box)`
   position: absolute;
-  bottom: calc(100% + 20px);
+  bottom: calc(100% + 30px);
   left: 50%;
   transform: translateX(-50%);
   font-weight: 600;
-  font-size: 32px;
-  line-height: 46px;
+  font-size: 45px;
+  line-height: 55px;
   letter-spacing: -0.05em;
-  color: white;
+  color: #ffffff;
   @media (min-width: 1401px) {
     display: none;
   }
