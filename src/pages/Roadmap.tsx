@@ -9,7 +9,7 @@ const Roadmap: React.FC<any> = ({ active }) => {
       setTimeout(() => {
         video.current.currentTime = 0;
         video.current.play();
-      }, 900);
+      }, 100);
     }
   }, [active]);
   return (
