@@ -1,9 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from "@mui/styled-engine-sc";
-import { Box } from "@mui/material";
+import { Box, Fade } from "@mui/material";
 
 const Topbar: React.FC = () => {
-  // const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   return (
     <StyledContainer>
       <Box display="flex">
@@ -148,7 +148,7 @@ const Topbar: React.FC = () => {
             <span>Masternodes</span>
             <span>Discover</span>
           </PCMenu>
-          {/* <MenuIcon>
+          <MenuIcon>
             <img onClick={() => setOpen(!open)} src="images/Menu.svg" alt="" />
             <Fade in={open}>
               <MobileMenu onClick={() => setOpen(false)}>
@@ -160,7 +160,7 @@ const Topbar: React.FC = () => {
                 <Box>Discover</Box>
               </MobileMenu>
             </Fade>
-          </MenuIcon> */}
+          </MenuIcon>
         </Box>
       </Box>
     </StyledContainer>
@@ -240,27 +240,30 @@ const MenuList = styled(Box)`
   }
 `;
 
-// const MobileMenu = styled(Box)`
-//   position: absolute;
-//   top: 100%;
-//   right: 0;
-//   width: max-content;
-//   background: white;
-//   border: 1px solid grey;
-//   > div {
-//     cursor: pointer;
-//     padding: 20px;
-//     color: black;
-//     transition: 0.3s;
-//     &:hover {
-//       background: lightgrey;
-//     }
-//   }
-// `;
+const MobileMenu = styled(Box)`
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: max-content;
+  background: white;
+  border: 1px solid grey;
+  > div {
+    cursor: pointer;
+    padding: 20px;
+    color: black;
+    transition: 0.3s;
+    &:hover {
+      background: lightgrey;
+    }
+  }
+`;
 
-// const MenuIcon = styled(Box)`
-//   position: relative;
-// `;
+const MenuIcon = styled(Box)`
+  position: relative;
+  @media (min-width: 1441px) {
+    display: none;
+  }
+`;
 
 const PCMenu = styled(Box)`
   font-size: 18px;
@@ -305,7 +308,7 @@ const StyledContainer = styled(Box)`
     margin-right: auto;
 
     @media (max-width: 768px) {
-      padding: 20px 32px;
+      padding: 31.36px 49.35px 31.36px 45px;
     }
   }
 `;

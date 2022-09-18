@@ -47,9 +47,7 @@ const Metrics: React.FC<any> = ({ active }) => {
         data: { result },
       } = await axios.get("https://cloe.deta.dev/clo_metrics");
       let tmp = result;
-      tmp.netwok_hashrate = parseFloat(
-        result.netwok_hashrate.replace(" GH/s", "")
-      );
+      tmp.netwok_hashrate = parseFloat(result.netwok_hashrate.replace(" GH/s", ""));
       setMetricData(tmp);
       setTimeout(() => setOpen1(true), 2000);
       setTimeout(() => setOpen2(true), 3000);
@@ -113,7 +111,11 @@ const Metric1 = styled(Box)`
     left: 200px;
   }
   @media (max-width: 1200px) {
-    left: 50px;
+    top: unset;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 257.96px;
+    width: 100%;
   }
 `;
 
@@ -132,7 +134,11 @@ const Metric2 = styled(Box)`
     right: 200px;
   }
   @media (max-width: 1200px) {
-    right: 50px;
+    top: unset;
+    right: 50%;
+    transform: translateX(50%);
+    bottom: 162.28px;
+    width: 100%;
   }
 `;
 
@@ -147,8 +153,9 @@ const Metric3 = styled(Box)`
   > div + div {
     margin-top: 8.83px;
   }
-  @media (max-width: 768px) {
-    bottom: 40px;
+  @media (max-width: 1200px) {
+    bottom: 58.47px;
+    width: 100%;
   }
 `;
 
@@ -158,10 +165,6 @@ const Text1 = styled(Box)`
   line-height: 27px;
   text-align: center;
   letter-spacing: -0.03em;
-  @media (max-width: 768px) {
-    font-size: 11px;
-    line-height: 16px;
-  }
 `;
 
 const Text2 = styled(Box)`
@@ -170,10 +173,6 @@ const Text2 = styled(Box)`
   line-height: 37px;
   text-align: center;
   letter-spacing: -0.05em;
-  @media (max-width: 768px) {
-    font-size: 15px;
-    line-height: 22px;
-  }
 `;
 
 const Title = styled(Box)`
@@ -188,9 +187,9 @@ const Title = styled(Box)`
   text-align: center;
   width: 100%;
   @media (max-width: 768px) {
-    top: 80px;
-    font-size: 18px;
-    line-height: 28px;
+    top: 133.67px;
+    font-size: 42px;
+    line-height: 51px;
   }
 `;
 
@@ -198,7 +197,7 @@ const StyledContainer = styled(Box)`
   position: relative;
   height: 960px;
   @media (max-width: 768px) {
-    height: 480px;
+    height: 88vh;
   }
   > video:first-of-type {
     position: absolute;
@@ -211,6 +210,9 @@ const StyledContainer = styled(Box)`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    @media (max-width: 1200px) {
+      top: 45%;
+    }
   }
   * {
     color: white;

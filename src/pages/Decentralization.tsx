@@ -177,7 +177,7 @@ const Content = styled(Box)`
   }
   @media (max-width: 768px) {
     margin-top: 32px;
-    width: calc(100vw - 80px);
+    width: calc(100vw - 86.95px);
   }
 `;
 
@@ -194,10 +194,6 @@ const Pagination = styled(Box)`
   left: 163.96px;
   display: flex;
   transition: 1s;
-  @media (max-width: 768px) {
-    bottom: 30px;
-    left: 40px;
-  }
   > div + div {
     margin-left: 23px;
   }
@@ -208,6 +204,10 @@ const Pagination = styled(Box)`
     background: #d9d9d9;
     border-radius: 50%;
   }
+  @media (max-width: 768px) {
+    bottom: 85.34px;
+    left: 51.56px;
+  }
 `;
 
 const Text = styled(Box)`
@@ -216,16 +216,15 @@ const Text = styled(Box)`
   line-height: 27px;
   letter-spacing: -0.03em;
   color: white;
-  @media (max-width: 1000px) {
-    font-size: 18px;
-    line-height: 23px;
-  }
-  @media (max-width: 768px) {
-    font-size: 12px;
-    line-height: 17px;
-  }
   > span {
     font-weight: 600;
+  }
+  @media (max-width: 1000px) {
+    font-size: 18px;
+    line-height: 22px;
+    > span {
+      font-weight: 500;
+    }
   }
 `;
 
@@ -235,10 +234,6 @@ const Subtitle = styled(Box)`
   line-height: 43px;
   letter-spacing: -0.05em;
   color: white;
-  @media (max-width: 768px) {
-    font-size: 17px;
-    line-height: 25px;
-  }
 `;
 
 const Title = styled(Box)`
@@ -250,8 +245,9 @@ const Title = styled(Box)`
   width: max-content;
   @media (max-width: 768px) {
     top: 40px;
-    font-size: 18px;
-    line-height: 28px;
+    font-size: 42px;
+    line-height: 51px;
+    width: auto;
   }
 `;
 
@@ -270,7 +266,23 @@ const Section2 = styled(Box)`
     transform: translateY(-50%);
     transition: 1s;
     @media (max-width: 1600px) {
-      display: none;
+      top: unset;
+      bottom: -70px;
+      right: 50%;
+      transform: translateX(50%);
+    }
+    @media (max-width: 1200px) {
+      bottom: 20px;
+    }
+    @media (max-width: 900px) {
+      bottom: 120px;
+    }
+    @media (max-width: 768px) {
+      bottom: 0;
+      right: calc(50% + 25.78px);
+    }
+    @media (max-width: 500px) {
+      bottom: 40px;
     }
   }
 `;
@@ -290,9 +302,7 @@ const CuttingText = styled(Box)`
   color: #ffffff;
   width: 100%;
   @media (max-width: 768px) {
-    bottom: 31.28px;
-    font-size: 14px;
-    line-height: 22px;
+    bottom: 68.81px;
   }
 `;
 
@@ -307,11 +317,13 @@ const StyledContainer = styled(Box)<any>`
   padding-right: 158.17px;
   @media (max-width: 1600px) {
     background-size: 100% 175%;
+    padding-top: 124.01px;
   }
   @media (max-width: 768px) {
-    height: 480px;
-    padding-top: 100px;
-    padding-left: 40px;
+    background-size: cover;
+    height: 88vh;
+    padding-left: 51.56px;
+    padding-right: 0;
   }
   > img {
     position: absolute;
@@ -321,6 +333,16 @@ const StyledContainer = styled(Box)<any>`
     transition: 1s;
     z-index: 1;
     right: ${({ next }: any) => (next ? -23 : 0)}%;
+    @media (max-width: 1000px) {
+      width: auto;
+      right: unset;
+      left: ${({ next }: any) => (next ? -80 : -100)}%;
+    }
+    @media (max-width: 768px) {
+      width: auto;
+      right: unset;
+      left: ${({ next }: any) => (next ? -120 : -195)}%;
+    }
   }
   > video:first-of-type {
     position: absolute;
@@ -340,7 +362,7 @@ const StyledContainer = styled(Box)<any>`
       width: 50%;
     }
     @media (max-width: 768px) {
-      width: 250px;
+      width: 320px;
       transform: translate(-50%, -50%);
     }
   }

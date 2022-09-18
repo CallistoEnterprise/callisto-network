@@ -152,6 +152,9 @@ const ScrollIcon = styled(Box)`
   animation-name: mouse-scroll;
   animation-duration: 1.8s;
   animation-iteration-count: infinite;
+  @media (max-width: 1000px) {
+    display: none;
+  }
   @media (max-width: 768px) {
     bottom: 32px;
     right: 64px;
@@ -192,7 +195,7 @@ const StyledContainer = styled(Box)`
     position: relative;
     height: 960px;
     @media (max-width: 768px) {
-      height: 480px;
+      height: 88vh;
     }
     > section {
       position: absolute;
