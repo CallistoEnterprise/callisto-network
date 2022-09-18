@@ -419,6 +419,11 @@ const MenuIcon = styled(Box)`
   @media (min-width: 1441px) {
     display: none;
   }
+  @media (max-width: 500px) {
+    >img {
+      width: 20px; height: 20px;
+    }
+  }
 `;
 
 const PCMenu = styled(Box)`
@@ -462,6 +467,11 @@ const StyledContainer = styled(Box)`
     max-width: 1600px;
     margin-left: auto;
     margin-right: auto;
+    >img {
+      @media (max-width: 500px) {
+        width: 103px;
+      }
+    }
 
     @media (max-width: 768px) {
       padding: 31.36px 49.35px 31.36px 45px;
