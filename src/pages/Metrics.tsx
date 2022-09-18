@@ -1,17 +1,14 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useMemo } from "react";
 import styled from "@mui/styled-engine-sc";
 import { Box, Fade } from "@mui/material";
 import { useCountUp } from "react-countup";
+import axios from "axios"
 
 const Metrics: React.FC<any> = ({ active }) => {
   const metric1 = useRef(null);
   const metric2 = useRef(null);
   const metric3 = useRef(null);
-  const [metricData, setMetricData] = useState<any>({
-    monthly_transactions: 0,
-    netwok_hashrate: 0,
-    frozen_coins: 0,
-  });
+  const [metricData, setMetricData] = useState<any>({});
   const [open1, setOpen1] = useState(false);
   const [open2, setOpen2] = useState(false);
   const [open3, setOpen3] = useState(false);
@@ -44,19 +41,19 @@ const Metrics: React.FC<any> = ({ active }) => {
     decimals: 3,
   });
 
-  useEffect(() => {
+  useMemo(async() => {
     if (active) {
-      const tmp = {
-        monthly_transactions: 900102,
-        total_wallets: 1641399,
-        frozen_coins: 1180191753.6087244,
-        netwok_hashrate: 385.54,
-      };
-      // const {
-      //   data: { result },
-      // } = await axios.get("https://cloe.deta.dev/clo_metrics");
-      // let tmp = {...result};
-      // tmp.netwok_hashrate = parseFloat(result.netwok_hashrate.replace(" GH/s", ""));
+      // const tmp = {
+      //   monthly_transactions: 900102,
+      //   total_wallets: 1641399,
+      //   frozen_coins: 1180191753.6087244,
+      //   netwok_hashrate: 385.54,
+      // };
+      const {
+        data: { result },
+      } = await axios.get("https://cloe.deta.dev/clo_metrics");
+      let tmp = {...result};
+      tmp.netwok_hashrate = parseFloat(result.netwok_hashrate.replace(" GH/s", ""));
       console.log(tmp);
       setMetricData(tmp);
       setTimeout(() => setOpen1(true), 2000);
