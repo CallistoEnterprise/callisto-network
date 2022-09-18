@@ -77,7 +77,7 @@ const Pictures = styled(Box)`
     }
   }
   @media (max-width: 600px) {
-    right: 50px;
+    right: 75px;
   }
 `;
 
@@ -139,7 +139,7 @@ const StyledContainer = styled(Box)`
         object-position: 250px;
       }
       @media (max-width: 600px) {
-        object-position: 485px;
+        object-position: 460px;
       }
     }
   }
