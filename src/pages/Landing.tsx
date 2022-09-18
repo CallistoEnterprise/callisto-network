@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useRef } from "react";
+import React, { useState, useMemo, useRef, useEffect } from "react";
 import { Box } from "@mui/material";
 import styled from "@mui/styled-engine-sc";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
@@ -6,6 +6,7 @@ import Decentralization from "./Decentralization";
 import Metrics from "./Metrics";
 import Roadmap from "./Roadmap";
 import Partners from "./Partners";
+import useWindowDimensions from "hooks/useDimensions";
 
 const Landing: React.FC = () => {
   const [scrollableDown, setScrollableDown] = useState(true);
@@ -23,6 +24,13 @@ const Landing: React.FC = () => {
     useRef<any>(),
     useRef<any>(),
   ]);
+  const screenWidth = useWindowDimensions().width;
+  const screenHeight = useWindowDimensions().height;
+
+  useEffect(() => {
+    if (screenWidth === 280 && screenHeight === 653) alert("Galaxy Fold is not supported");
+  }, [screenWidth, screenHeight]);
+
   useMemo(() => disableBodyScroll(document.body), []);
   useMemo(() => {
     setScrollableDown(page === 1 && decentPage <= 1 ? false : true);
@@ -75,8 +83,7 @@ const Landing: React.FC = () => {
         setFade(true);
       }
       setPage(pageNext);
-      if (page === 4 && pageNext !== 4)
-        document.body.scrollIntoView({ behavior: "smooth" });
+      if (page === 4 && pageNext !== 4) document.body.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -106,11 +113,7 @@ const Landing: React.FC = () => {
   };
 
   return (
-    <StyledContainer
-      onWheel={wheel}
-      onTouchStart={touchStart}
-      onTouchEnd={touchEnd}
-    >
+    <StyledContainer onWheel={wheel} onTouchStart={touchStart} onTouchEnd={touchEnd}>
       <main>
         <section ref={refs[0]}>
           <Decentralization
@@ -159,6 +162,9 @@ const ScrollIcon = styled(Box)`
     bottom: 32px;
     right: 64px;
   }
+  @media (width: 1024px) and (height: 600px) {
+    right: 64px;
+  }
 `;
 
 const Page = styled(Box)<any>`
@@ -188,15 +194,15 @@ const Pagination = styled(Box)`
   @media (max-width: 1000px) {
     display: none;
   }
+  @media (width: 1024px) and (height: 600px) {
+    right: 64px;
+  }
 `;
 
 const StyledContainer = styled(Box)`
   > main {
     position: relative;
-    height: 960px;
-    @media (max-width: 768px) {
-      height: 88vh;
-    }
+    height: 100vh;
     > section {
       position: absolute;
       width: 100%;

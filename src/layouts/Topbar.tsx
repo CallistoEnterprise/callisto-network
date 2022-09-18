@@ -1,9 +1,17 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import styled from "@mui/styled-engine-sc";
-import { Box, Fade } from "@mui/material";
+import { Box, Fade, Modal } from "@mui/material";
 
 const Topbar: React.FC = () => {
   const [open, setOpen] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
+  const [submenuType, setSubmenuType] = useState(-1);
+  const openSubMenu = (i: any) => {
+    if (i >= 0 && i <= 2) {
+      setOpenModal(true);
+      setSubmenuType(i);
+    }
+  };
   return (
     <StyledContainer>
       <Box display="flex">
@@ -65,8 +73,8 @@ const Topbar: React.FC = () => {
                     <Box>
                       <Text1>Soy Bridge</Text1>
                       <Text2>
-                        Soy Bridge alows for moving assets from the leading
-                        blockchains to Callisto Network
+                        Soy Bridge alows for moving assets from the leading blockchains to Callisto
+                        Network
                       </Text2>
                     </Box>
                   </Box>
@@ -75,8 +83,7 @@ const Topbar: React.FC = () => {
                     <Box>
                       <Text1>Soy Finance</Text1>
                       <Text2>
-                        Soy Finance is a DeFi platform built with the highest
-                        security standards
+                        Soy Finance is a DeFi platform built with the highest security standards
                       </Text2>
                     </Box>
                   </Box>
@@ -127,8 +134,8 @@ const Topbar: React.FC = () => {
                     <Box>
                       <Text1>Callisto Network Forum</Text1>
                       <Text2>
-                        A place where Callistonians meet and discuss all things
-                        related to the ecosystem
+                        A place where Callistonians meet and discuss all things related to the
+                        ecosystem
                       </Text2>
                     </Box>
                   </Box>
@@ -136,9 +143,7 @@ const Topbar: React.FC = () => {
                     <img src="images/Astronaut.svg" alt="" />
                     <Box>
                       <Text1>Callistonians Program</Text1>
-                      <Text2>
-                        Get rewarded for your contribution to Callisto Network
-                      </Text2>
+                      <Text2>Get rewarded for your contribution to Callisto Network</Text2>
                     </Box>
                   </Box>
                 </MenuItems>
@@ -152,17 +157,144 @@ const Topbar: React.FC = () => {
             <img onClick={() => setOpen(!open)} src="images/Menu.svg" alt="" />
             <Fade in={open}>
               <MobileMenu onClick={() => setOpen(false)}>
-                <Box>Developers</Box>
-                <Box>Ecosystem</Box>
-                <Box>Community</Box>
-                <Box>Proof Of Work</Box>
-                <Box>Masternodes</Box>
-                <Box>Discover</Box>
+                <Box onClick={() => openSubMenu(0)}>Developers</Box>
+                <Box onClick={() => openSubMenu(1)}>Ecosystem</Box>
+                <Box onClick={() => openSubMenu(2)}>Community</Box>
+                <Box onClick={() => openSubMenu(3)}>Proof Of Work</Box>
+                <Box onClick={() => openSubMenu(4)}>Masternodes</Box>
+                <Box onClick={() => openSubMenu(5)}>Discover</Box>
               </MobileMenu>
             </Fade>
           </MenuIcon>
         </Box>
       </Box>
+      <Modal open={openModal} onClose={() => setOpenModal(false)}>
+        <MobileMenuList>
+          {submenuType === 0 && (
+            <MenuItems>
+              <Box>
+                <img src="images/Github.svg" alt="" />
+                <Box>
+                  <Text1>GitHub</Text1>
+                  <Text2>Join our community on Github</Text2>
+                </Box>
+              </Box>
+              <Box>
+                <img src="images/Testnet Explorer.svg" alt="" />
+                <Box>
+                  <Text1>Testnet Explorer</Text1>
+                  <Text2>Browse the CLO Testnet</Text2>
+                </Box>
+              </Box>
+              <Box>
+                <img src="images/Testnet Faucet.svg" alt="" />
+                <Box>
+                  <Text1>Testnet Faucet</Text1>
+                  <Text2>Get CLO testnet coins</Text2>
+                </Box>
+              </Box>
+              <Box>
+                <img src="images/We fund you.svg" alt="" />
+                <Box>
+                  <Text1>We Fund You!</Text1>
+                  <Text2>Build on Callisto Network and get funded</Text2>
+                </Box>
+              </Box>
+            </MenuItems>
+          )}
+          {submenuType === 1 && (
+            <>
+              <MenuItems>
+                <Title>Explorer</Title>
+                <Box>
+                  <img src="images/Testnet Explorer.svg" alt="" />
+                  <Box>
+                    <Text1>Explorer</Text1>
+                    <Text2>Browse Callisto Network</Text2>
+                  </Box>
+                </Box>
+              </MenuItems>
+              <MenuItems>
+                <Title>DApps</Title>
+                <Box>
+                  <img src="images/Bridge.svg" alt="" />
+                  <Box>
+                    <Text1>Soy Bridge</Text1>
+                    <Text2>
+                      Soy Bridge alows for moving assets from the leading blockchains to Callisto
+                      Network
+                    </Text2>
+                  </Box>
+                </Box>
+                <Box>
+                  <img src="images/Soy Finance.svg" alt="" />
+                  <Box>
+                    <Text1>Soy Finance</Text1>
+                    <Text2>
+                      Soy Finance is a DeFi platform built with the highest security standards
+                    </Text2>
+                  </Box>
+                </Box>
+                <Box>
+                  <img src="images/More.svg" alt="" />
+                  <Box>
+                    <Text1>More</Text1>
+                  </Box>
+                </Box>
+              </MenuItems>
+              <MenuItems>
+                <Title>Wallets</Title>
+                <Box>
+                  <img src="images/Metamask.svg" alt="" />
+                  <Box>
+                    <Text1>MetaMask</Text1>
+                    <Text2>Go to MetaMask</Text2>
+                  </Box>
+                </Box>
+                <Box>
+                  <img src="images/Clo.svg" alt="" />
+                  <Box>
+                    <Text1>Official Web Wallet</Text1>
+                    <Text2>Go to Callisto Wallet</Text2>
+                  </Box>
+                </Box>
+                <Box>
+                  <img src="images/Absolute.svg" alt="" />
+                  <Box>
+                    <Text1>AbsoluteWallet</Text1>
+                  </Box>
+                </Box>
+                <Box>
+                  <img src="images/More.svg" alt="" />
+                  <Box>
+                    <Text1>More</Text1>
+                  </Box>
+                </Box>
+              </MenuItems>
+            </>
+          )}
+          {submenuType === 2 && (
+            <MenuItems>
+              <Box>
+                <img src="images/Forum.svg" alt="" />
+                <Box>
+                  <Text1>Callisto Network Forum</Text1>
+                  <Text2>
+                    A place where Callistonians meet and discuss all things related to the ecosystem
+                  </Text2>
+                </Box>
+              </Box>
+              <Box>
+                <img src="images/Astronaut.svg" alt="" />
+                <Box>
+                  <Text1>Callistonians Program</Text1>
+                  <Text2>Get rewarded for your contribution to Callisto Network</Text2>
+                </Box>
+              </Box>
+            </MenuItems>
+          )}
+        </MobileMenuList>
+      </Modal>
     </StyledContainer>
   );
 };
@@ -176,6 +308,7 @@ const MenuItems = styled(Box)`
   > div {
     display: flex;
     align-items: center;
+    cursor: pointer;
     > img {
       width: 34.55px;
       min-width: 34.55px;
@@ -214,6 +347,26 @@ const Text1 = styled(Box)`
   line-height: 25px;
   letter-spacing: -0.05em;
   color: white;
+`;
+
+const MobileMenuList = styled(Box)`
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  outline: none;
+  background: rgba(4, 31, 48, 0.81);
+  border: 2px solid #d9d9d9;
+  border-radius: 10px;
+  padding: 25.61px 0 25.61px 25.64px;
+  display: flex;
+  flex-direction: column;
+  width: 360px;
+  max-height: calc(100% - 40px);
+  overflow: auto;
+  > div + div {
+    margin-top: 30.69px;
+  }
 `;
 
 const MenuList = styled(Box)`
@@ -260,6 +413,9 @@ const MobileMenu = styled(Box)`
 
 const MenuIcon = styled(Box)`
   position: relative;
+  > img {
+    cursor: pointer;
+  }
   @media (min-width: 1441px) {
     display: none;
   }

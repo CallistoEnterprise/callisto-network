@@ -15,14 +15,18 @@ const Roadmap: React.FC<any> = ({ active }) => {
   return (
     <StyledContainer>
       <video ref={video} src="videos/Roadmap_H.mp4" muted loop />
-      <Box display="flex" flexDirection="column" alignItems="center">
+      <Box display="flex" flexDirection="column" alignItems="center" height="100%">
         <Title>Roadmap</Title>
         <Maps>
           <Box>
             <Text1>Q1</Text1>
             <Text2>2022</Text2>
             <Content>
-              <Box>Security<br/>Department</Box>
+              <Box>
+                Security
+                <br />
+                Department
+              </Box>
               <Box>
                 Mileston 1<br />
                 Mileston 2
@@ -80,6 +84,10 @@ const Content = styled(Box)`
     line-height: 30px;
     letter-spacing: -0.05em;
     color: #ffffff;
+    @media (max-height: 800px) {
+      font-size: 18px;
+      line-height: 23px;
+    }
   }
   > div:nth-of-type(2) {
     font-weight: 300;
@@ -88,6 +96,13 @@ const Content = styled(Box)`
     text-align: center;
     letter-spacing: -0.03em;
     color: #ffffff;
+    @media (max-height: 800px) {
+      font-size: 15px;
+      line-height: 20px;
+    }
+  }
+  @media (max-width: 400px) {
+    width: calc(100% - 40px);
   }
 `;
 const Text2 = styled(Box)`
@@ -97,24 +112,46 @@ const Text2 = styled(Box)`
   text-align: center;
   letter-spacing: -0.05em;
   color: #ffffff;
+  @media (max-height: 1000px) {
+    font-size: 18px;
+    line-height: 25px;
+  }
+  @media (max-height: 800px) {
+    font-size: 14px;
+    line-height: 21px;
+  }
 `;
+
 const Text1 = styled(Box)`
   font-weight: 700;
   font-size: 56.5488px;
   line-height: 69px;
   letter-spacing: -0.05em;
   color: #ffffff;
+  @media (max-height: 1000px) {
+    font-size: 40px;
+    line-height: 53px;
+  }
+  @media (max-height: 900px) {
+    font-size: 30px;
+    line-height: 43px;
+  }
+  @media (max-height: 800px) {
+    font-size: 25px;
+    line-height: 38px;
+  }
 `;
 
 const Maps = styled(Box)`
   width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   > div {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-  > div + div {
-    margin-top: 47.41px;
   }
 `;
 
@@ -125,11 +162,14 @@ const Title = styled(Box)`
   letter-spacing: -0.05em;
   color: #ffffff;
   margin-bottom: 44.41px;
+  @media (max-height: 730px) {
+    margin-bottom: 10px;
+  }
 `;
 
 const StyledContainer = styled(Box)`
   position: relative;
-  height: 960px;
+  height: 100vh;
   z-index: 1;
   > video:first-of-type {
     position: absolute;
@@ -138,10 +178,10 @@ const StyledContainer = styled(Box)`
     object-fit: cover;
   }
   @media (max-width: 768px) {
-    height: 1091px;
     background: url("images/Roadmap_BG.png") no-repeat;
     background-size: cover;
     padding-top: 123.74px;
+    padding-bottom: 59.1px;
     > video:first-of-type {
       display: none;
     }

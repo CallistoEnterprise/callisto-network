@@ -79,6 +79,28 @@ const Pictures = styled(Box)`
   @media (max-width: 600px) {
     right: 75px;
   }
+  @media (width: 912px) and (height: 1368px) {
+    right: 530px;
+  }
+  @media (width: 540px) and (height: 720px) {
+    top: 41%;
+    right: 75px;
+  }
+  @media (width: 768px) and (height: 1024px) {
+    top: unset;
+    right: 285px;
+  }
+  @media (width: 1024px) and (height: 600px) {
+    top: 25%;
+    right: 530px;
+  }
+  @media (width: 1280px) and (height: 800px) {
+    top: 15%;
+    right: 535px;
+  }
+  @media (width: 375px) and (height: 667px) {
+    top: 40%;
+  }
 `;
 
 const Title = styled(Box)`
@@ -113,12 +135,9 @@ const TitleMobile = styled(Box)`
 
 const StyledContainer = styled(Box)`
   position: relative;
-  height: 960px;
+  height: 100vh;
   background: url("images/Sky.png") no-repeat;
   background-size: cover;
-  @media (max-width: 768px) {
-    height: 88vh;
-  }
   > div:first-of-type {
     position: absolute;
     width: 100%;
@@ -139,6 +158,12 @@ const StyledContainer = styled(Box)`
         object-position: 250px;
       }
       @media (max-width: 600px) {
+        object-position: 460px;
+      }
+      @media (width: 912px) and (height: 1368px) {
+        height: 935px;
+      }
+      @media (width: 412px) and (height: 914px) {
         object-position: 460px;
       }
     }
