@@ -336,6 +336,9 @@ const Head = styled(Box)<any>`
           width: 25.89px;
           height: 1px;
           background: white;
+          @media (min-width: 769px) {
+            display: none;
+          }
         }
       }
       > * + * {
