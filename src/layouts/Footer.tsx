@@ -103,7 +103,7 @@ const Footer: React.FC = () => {
                 <a
                   target="_blank"
                   rel="noreferrer"
-                  href="https://github.com/EthereumCommonwealth/Callisto-Media-Kit"
+                  href="https://docs.callisto.network/miscellaneous/media-kit"
                 >
                   Media Kit
                 </a>
