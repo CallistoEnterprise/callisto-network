@@ -184,8 +184,9 @@ const Pagination = styled(Box)`
     border-radius: 50%;
   }
   @media (max-width: 768px) {
-    bottom: 85.34px;
-    left: 51.56px;
+    /* bottom: 85.34px;
+    left: 51.56px; */
+    display: none;
   }
   @media (width: 1024px) and (height: 600px) {
     bottom: 60px;
