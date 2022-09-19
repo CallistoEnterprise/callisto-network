@@ -246,7 +246,7 @@ const Section2 = styled(Box)`
   > video {
     position: absolute;
     top: calc(50% - 82px);
-    right: -80px;
+    right: -150px;
     transform: translateY(-50%);
     transition: .4s;
     @media (max-width: 1600px) {
@@ -255,8 +255,11 @@ const Section2 = styled(Box)`
       right: 50%;
       transform: translateX(50%);
     }
+    @media (max-width: 1600px) and (max-height: 1000px) {
+      display: none;
+    }
     @media (max-width: 1200px) {
-      bottom: 80px;
+      bottom: 0px;
     }
     @media (max-width: 900px) {
       bottom: 120px;

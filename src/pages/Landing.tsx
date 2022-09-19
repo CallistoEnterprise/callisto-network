@@ -158,6 +158,9 @@ const ScrollIcon = styled(Box)`
   @media (max-width: 1000px) {
     display: none;
   }
+  @media (max-width: 1200px) {
+    right: 64px;
+  }
   @media (max-width: 768px) {
     bottom: 32px;
     right: 64px;
@@ -193,6 +196,9 @@ const Pagination = styled(Box)`
   }
   @media (max-width: 1000px) {
     display: none;
+  }
+  @media (max-width: 1200px) {
+    right: 64px;
   }
   @media (width: 1024px) and (height: 600px) {
     right: 64px;
