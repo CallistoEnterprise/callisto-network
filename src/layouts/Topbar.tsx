@@ -22,34 +22,34 @@ const Topbar: React.FC = () => {
               Developers
               <MenuList>
                 <MenuItems>
-                  <Box>
+                  <a target="_blank" rel="noreferrer"href="https://github.com/EthereumCommonwealth/Callisto-Website">
                     <img src="images/Github.svg" alt="" />
                     <Box>
                       <Text1>GitHub</Text1>
                       <Text2>Join our community on Github</Text2>
                     </Box>
-                  </Box>
-                  <Box>
+                  </a>
+                  <a target="_blank" rel="noreferrer" href="https://testnet-explorer.callisto.network/">
                     <img src="images/Testnet Explorer.svg" alt="" />
                     <Box>
                       <Text1>Testnet Explorer</Text1>
                       <Text2>Browse the CLO Testnet</Text2>
                     </Box>
-                  </Box>
-                  <Box>
+                  </a>
+                  <a target="_blank" rel="noreferrer"href="https://github.com/EthereumCommonwealth/Callisto-Website">
                     <img src="images/Testnet Faucet.svg" alt="" />
                     <Box>
                       <Text1>Testnet Faucet</Text1>
                       <Text2>Get CLO testnet coins</Text2>
                     </Box>
-                  </Box>
-                  <Box>
+                  </a>
+                  <a target="_blank" rel="noreferrer"href="https://docs.callisto.network/we-fund-you/we-fund-you">
                     <img src="images/We fund you.svg" alt="" />
                     <Box>
                       <Text1>We Fund You!</Text1>
                       <Text2>Build on Callisto Network and get funded</Text2>
                     </Box>
-                  </Box>
+                  </a>
                 </MenuItems>
               </MenuList>
             </span>
@@ -58,17 +58,17 @@ const Topbar: React.FC = () => {
               <MenuList>
                 <MenuItems>
                   <Title>Explorer</Title>
-                  <Box>
+                  <a target="_blank" rel="noreferrer"href="https://explorer.callisto.network/">
                     <img src="images/Testnet Explorer.svg" alt="" />
                     <Box>
                       <Text1>Explorer</Text1>
                       <Text2>Browse Callisto Network</Text2>
                     </Box>
-                  </Box>
+                  </a>
                 </MenuItems>
                 <MenuItems>
                   <Title>DApps</Title>
-                  <Box>
+                  <a target="_blank" rel="noreferrer"href="https://bridge.soy.finance/">
                     <img src="images/Bridge.svg" alt="" />
                     <Box>
                       <Text1>Soy Bridge</Text1>
@@ -77,8 +77,8 @@ const Topbar: React.FC = () => {
                         Network
                       </Text2>
                     </Box>
-                  </Box>
-                  <Box>
+                  </a>
+                  <a target="_blank" rel="noreferrer"href="https://soy.finance/">
                     <img src="images/Soy Finance.svg" alt="" />
                     <Box>
                       <Text1>Soy Finance</Text1>
@@ -86,42 +86,42 @@ const Topbar: React.FC = () => {
                         Soy Finance is a DeFi platform built with the highest security standards
                       </Text2>
                     </Box>
-                  </Box>
-                  <Box>
+                  </a>
+                  <a target="_blank" rel="noreferrer"href="https://github.com/EthereumCommonwealth/Callisto-Website">
                     <img src="images/More.svg" alt="" />
                     <Box>
                       <Text1>More</Text1>
                     </Box>
-                  </Box>
+                  </a>
                 </MenuItems>
                 <MenuItems>
                   <Title>Wallets</Title>
-                  <Box>
+                  <a target="_blank" rel="noreferrer"href="https://docs.callisto.network/callisto-network/tutorials/set-up-metamask-for-callisto-network">
                     <img src="images/Metamask.svg" alt="" />
                     <Box>
                       <Text1>MetaMask</Text1>
                       <Text2>Go to MetaMask</Text2>
                     </Box>
-                  </Box>
-                  <Box>
+                  </a>
+                  <a target="_blank" rel="noreferrer"href="https://wallet.callisto.network/">
                     <img src="images/Clo.svg" alt="" />
                     <Box>
                       <Text1>Official Web Wallet</Text1>
                       <Text2>Go to Callisto Wallet</Text2>
                     </Box>
-                  </Box>
-                  <Box>
+                  </a>
+                  <a target="_blank" rel="noreferrer"href="https://absolutewallet.com/">
                     <img src="images/Absolute.svg" alt="" />
                     <Box>
                       <Text1>AbsoluteWallet</Text1>
                     </Box>
-                  </Box>
-                  <Box>
+                  </a>
+                  <a target="_blank" rel="noreferrer"href="https://github.com/EthereumCommonwealth/Callisto-Website">
                     <img src="images/More.svg" alt="" />
                     <Box>
                       <Text1>More</Text1>
                     </Box>
-                  </Box>
+                  </a>
                 </MenuItems>
               </MenuList>
             </span>
@@ -129,7 +129,7 @@ const Topbar: React.FC = () => {
               Community
               <MenuList>
                 <MenuItems>
-                  <Box>
+                  <a target="_blank" rel="noreferrer"href="https://gov.callisto.network/categories">
                     <img src="images/Forum.svg" alt="" />
                     <Box>
                       <Text1>Callisto Network Forum</Text1>
@@ -138,19 +138,19 @@ const Topbar: React.FC = () => {
                         ecosystem
                       </Text2>
                     </Box>
-                  </Box>
-                  <Box>
+                  </a>
+                  <a target="_blank" rel="noreferrer"href="https://github.com/EthereumCommonwealth/Callisto-Website">
                     <img src="images/Astronaut.svg" alt="" />
                     <Box>
                       <Text1>Callistonians Program</Text1>
                       <Text2>Get rewarded for your contribution to Callisto Network</Text2>
                     </Box>
-                  </Box>
+                  </a>
                 </MenuItems>
               </MenuList>
             </span>
-            <span>Proof Of Work</span>
-            <span>Masternodes</span>
+            <span onClick={() => window.open("https://docs.callisto.network/callisto-network/proof-of-work  ", "_blank")}>Proof Of Work</span>
+            <span onClick={() => window.open("https://docs.callisto.network/callisto-network/callisto-network-masternodes", "_blank")}>Masternodes</span>
             <span>Discover</span>
           </PCMenu>
           <MenuIcon>
@@ -160,9 +160,9 @@ const Topbar: React.FC = () => {
                 <Box onClick={() => openSubMenu(0)}>Developers</Box>
                 <Box onClick={() => openSubMenu(1)}>Ecosystem</Box>
                 <Box onClick={() => openSubMenu(2)}>Community</Box>
-                <Box onClick={() => openSubMenu(3)}>Proof Of Work</Box>
-                <Box onClick={() => openSubMenu(4)}>Masternodes</Box>
-                <Box onClick={() => openSubMenu(5)}>Discover</Box>
+                <Box onClick={() => window.open("https://docs.callisto.network/callisto-network/proof-of-work", "_blank")}>Proof Of Work</Box>
+                <Box onClick={() => window.open("https://docs.callisto.network/callisto-network/proof-of-work", "_blank")}>Masternodes</Box>
+                <Box onClick={() => window.open("https://docs.callisto.network/callisto-network/proof-of-work", "_blank")}>Discover</Box>
               </MobileMenu>
             </Fade>
           </MenuIcon>
@@ -172,51 +172,51 @@ const Topbar: React.FC = () => {
         <MobileMenuList>
           {submenuType === 0 && (
             <MenuItems>
-              <Box>
+              <a target="_blank" rel="noreferrer"href="https://github.com/EthereumCommonwealth/Callisto-Website">
                 <img src="images/Github.svg" alt="" />
                 <Box>
                   <Text1>GitHub</Text1>
                   <Text2>Join our community on Github</Text2>
                 </Box>
-              </Box>
-              <Box>
+              </a>
+              <a target="_blank" rel="noreferrer"href="https://testnet-explorer.callisto.network/">
                 <img src="images/Testnet Explorer.svg" alt="" />
                 <Box>
                   <Text1>Testnet Explorer</Text1>
                   <Text2>Browse the CLO Testnet</Text2>
                 </Box>
-              </Box>
-              <Box>
+              </a>
+              <a target="_blank" rel="noreferrer"href="https://faucet.callisto.network/">
                 <img src="images/Testnet Faucet.svg" alt="" />
                 <Box>
                   <Text1>Testnet Faucet</Text1>
                   <Text2>Get CLO testnet coins</Text2>
                 </Box>
-              </Box>
-              <Box>
+              </a>
+              <a target="_blank" rel="noreferrer"href="https://docs.callisto.network/we-fund-you/we-fund-you">
                 <img src="images/We fund you.svg" alt="" />
                 <Box>
                   <Text1>We Fund You!</Text1>
                   <Text2>Build on Callisto Network and get funded</Text2>
                 </Box>
-              </Box>
+              </a>
             </MenuItems>
           )}
           {submenuType === 1 && (
             <>
               <MenuItems>
                 <Title>Explorer</Title>
-                <Box>
+                <a target="_blank" rel="noreferrer"href="https://explorer.callisto.network/">
                   <img src="images/Testnet Explorer.svg" alt="" />
                   <Box>
                     <Text1>Explorer</Text1>
                     <Text2>Browse Callisto Network</Text2>
                   </Box>
-                </Box>
+                </a>
               </MenuItems>
               <MenuItems>
                 <Title>DApps</Title>
-                <Box>
+                <a target="_blank" rel="noreferrer"href="https://bridge.soy.finance/">
                   <img src="images/Bridge.svg" alt="" />
                   <Box>
                     <Text1>Soy Bridge</Text1>
@@ -225,8 +225,8 @@ const Topbar: React.FC = () => {
                       Network
                     </Text2>
                   </Box>
-                </Box>
-                <Box>
+                </a>
+                <a target="_blank" rel="noreferrer"href="https://soy.finance/">
                   <img src="images/Soy Finance.svg" alt="" />
                   <Box>
                     <Text1>Soy Finance</Text1>
@@ -234,48 +234,48 @@ const Topbar: React.FC = () => {
                       Soy Finance is a DeFi platform built with the highest security standards
                     </Text2>
                   </Box>
-                </Box>
-                <Box>
+                </a>
+                <a target="_blank" rel="noreferrer"href="https://github.com/EthereumCommonwealth/Callisto-Website">
                   <img src="images/More.svg" alt="" />
                   <Box>
                     <Text1>More</Text1>
                   </Box>
-                </Box>
+                </a>
               </MenuItems>
               <MenuItems>
                 <Title>Wallets</Title>
-                <Box>
+                <a target="_blank" rel="noreferrer"href="https://docs.callisto.network/callisto-network/tutorials/set-up-metamask-for-callisto-network">
                   <img src="images/Metamask.svg" alt="" />
                   <Box>
                     <Text1>MetaMask</Text1>
                     <Text2>Go to MetaMask</Text2>
                   </Box>
-                </Box>
-                <Box>
+                </a>
+                <a target="_blank" rel="noreferrer"href="https://wallet.callisto.network/">
                   <img src="images/Clo.svg" alt="" />
                   <Box>
                     <Text1>Official Web Wallet</Text1>
                     <Text2>Go to Callisto Wallet</Text2>
                   </Box>
-                </Box>
-                <Box>
+                </a>
+                <a target="_blank" rel="noreferrer"href="https://absolutewallet.com/">
                   <img src="images/Absolute.svg" alt="" />
                   <Box>
                     <Text1>AbsoluteWallet</Text1>
                   </Box>
-                </Box>
-                <Box>
+                </a>
+                <a target="_blank" rel="noreferrer"href="https://callisto.network/wallets/">
                   <img src="images/More.svg" alt="" />
                   <Box>
                     <Text1>More</Text1>
                   </Box>
-                </Box>
+                </a>
               </MenuItems>
             </>
           )}
           {submenuType === 2 && (
             <MenuItems>
-              <Box>
+              <a target="_blank" rel="noreferrer"href="https://gov.callisto.network/categories">
                 <img src="images/Forum.svg" alt="" />
                 <Box>
                   <Text1>Callisto Network Forum</Text1>
@@ -283,14 +283,14 @@ const Topbar: React.FC = () => {
                     A place where Callistonians meet and discuss all things related to the ecosystem
                   </Text2>
                 </Box>
-              </Box>
-              <Box>
+              </a>
+              <a target="_blank" rel="noreferrer"href="https://github.com/EthereumCommonwealth/Callisto-Website">
                 <img src="images/Astronaut.svg" alt="" />
                 <Box>
                   <Text1>Callistonians Program</Text1>
                   <Text2>Get rewarded for your contribution to Callisto Network</Text2>
                 </Box>
-              </Box>
+              </a>
             </MenuItems>
           )}
         </MobileMenuList>
@@ -302,10 +302,14 @@ const Topbar: React.FC = () => {
 const MenuItems = styled(Box)`
   display: flex;
   flex-direction: column;
-  > div + div {
+  >div {
+    margin-bottom: 25.39px;
+  }
+  > a + a {
     margin-top: 25.39px;
   }
-  > div {
+  > a {
+    text-decoration: none;
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -364,7 +368,7 @@ const MobileMenuList = styled(Box)`
   width: 360px;
   max-height: calc(100% - 40px);
   overflow: auto;
-  > div + div {
+  > *+* {
     margin-top: 30.69px;
   }
 `;
@@ -379,7 +383,7 @@ const MenuList = styled(Box)`
   padding: 25.61px 9px 25.61px 20.64px;
   display: flex;
   flex-direction: column;
-  > div + div {
+  > *+* {
     margin-top: 30.69px;
   }
   width: 360px;
