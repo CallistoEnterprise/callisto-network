@@ -444,7 +444,7 @@ const PCMenu = styled(Box)`
     position: relative;
     > div {
       pointer-events: none;
-      transition: 2s;
+      transition: 1s;
       opacity: 0;
     }
     &:hover {
