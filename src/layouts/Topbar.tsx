@@ -358,7 +358,7 @@ const MobileMenuList = styled(Box)`
   background: rgba(4, 31, 48, 0.81);
   border: 2px solid #d9d9d9;
   border-radius: 10px;
-  padding: 25.61px 0 25.61px 25.64px;
+  padding: 25.61px 9px 25.61px 20.64px;
   display: flex;
   flex-direction: column;
   width: 360px;
@@ -376,7 +376,7 @@ const MenuList = styled(Box)`
   background: rgba(4, 31, 48, 0.81);
   border: 2px solid #d9d9d9;
   border-radius: 10px;
-  padding: 25.61px 0 25.61px 25.64px;
+  padding: 25.61px 9px 25.61px 20.64px;
   display: flex;
   flex-direction: column;
   > div + div {
@@ -410,9 +410,6 @@ const MobileMenu = styled(Box)`
     line-height: 25px;
     letter-spacing: -0.05em;
     color: white;
-    &:hover {
-      background: lightgrey;
-    }
   }
   >div+div {
     margin-top: 20px;
