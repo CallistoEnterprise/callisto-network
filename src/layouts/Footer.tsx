@@ -123,41 +123,6 @@ const Footer: React.FC = () => {
               <a
                 target="_blank"
                 rel="noreferrer"
-                href="https://www.facebook.com/callistonetwork"
-              >
-                <img src="images/Facebook.svg" alt="" />
-              </a>
-              <a
-                target="_blank"
-                rel="noreferrer"
-                href="https://bitcointalk.org/index.php?topic=3380156.0"
-              >
-                <img src="images/Btc.svg" alt="" />
-              </a>
-              <a
-                target="_blank"
-                rel="noreferrer"
-                href="https://www.instagram.com/callisto.network"
-              >
-                <img src="images/Insta.svg" alt="" />
-              </a>
-              <a
-                target="_blank"
-                rel="noreferrer"
-                href="https://www.linkedin.com/company/callisto-network/"
-              >
-                <img src="images/Link.svg" alt="" />
-              </a>
-              <a
-                target="_blank"
-                rel="noreferrer"
-                href="https://www.reddit.com/r/CallistoCrypto/"
-              >
-                <img src="images/Red.svg" alt="" />
-              </a>
-              <a
-                target="_blank"
-                rel="noreferrer"
                 href="https://t.me/CallistoNet"
               >
                 <img src="images/Telegram.svg" alt="" />
@@ -172,9 +137,44 @@ const Footer: React.FC = () => {
               <a
                 target="_blank"
                 rel="noreferrer"
+                href="https://www.reddit.com/r/CallistoCrypto/"
+              >
+                <img src="images/Red.svg" alt="" />
+              </a>
+              <a
+                target="_blank"
+                rel="noreferrer"
                 href="https://www.youtube.com/c/CallistoNetwork"
               >
                 <img src="images/Youtube.svg" alt="" />
+              </a>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://www.instagram.com/callisto.network"
+              >
+                <img src="images/Insta.svg" alt="" />
+              </a>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://www.facebook.com/callistonetwork"
+              >
+                <img src="images/Facebook.svg" alt="" />
+              </a>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://www.linkedin.com/company/callisto-network/"
+              >
+                <img src="images/Link.svg" alt="" />
+              </a>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://bitcointalk.org/index.php?topic=3380156.0"
+              >
+                <img src="images/Btc.svg" alt="" />
               </a>
             </Socials>
           </Box>

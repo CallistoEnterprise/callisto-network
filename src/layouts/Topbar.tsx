@@ -375,7 +375,7 @@ const MobileMenuList = styled(Box)`
 
 const MenuList = styled(Box)`
   position: absolute;
-  top: calc(100% + 46.02px);
+  top: calc(100% + 50px);
   left: 0;
   background: rgba(4, 31, 48, 0.81);
   border: 2px solid #d9d9d9;
@@ -391,8 +391,8 @@ const MenuList = styled(Box)`
     content: "";
     position: absolute;
     width: 100%;
-    height: 46.02px;
-    top: -46.02px;
+    height: 65px;
+    top: -65px;
     left: 0;
   }
 `;
@@ -446,6 +446,7 @@ const PCMenu = styled(Box)`
   > span {
     cursor: pointer;
     position: relative;
+    transition: .1s;
     > div {
       pointer-events: none;
       transition: 1s;
