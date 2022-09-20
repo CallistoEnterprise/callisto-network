@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useMemo, useRef } from "react";
 import PropTypes from "prop-types";
 import { Box, Fade } from "@mui/material";
 import styled from "@mui/styled-engine-sc";
@@ -11,19 +11,25 @@ interface Props {
 }
 
 const Layout: React.FC<Props> = ({ children }: any) => {
-  const bodyRef = useRef<any>();
+  const ref = useRef<any>();
   const [loading, setLoading] = React.useState(true);
-
+  useMemo(() => {
+    if (ref.current) ref.current.defaultPlaybackRate = 2.5;
+  }, []);
   return (
     <StyledContainer>
       <Topbar />
-      <Body component="main" {...{ ref: bodyRef }}>
-        {children}
-      </Body>
+      <Body component="main">{children}</Body>
       <Footer />
       <Fade in={loading} timeout={{ appear: 0, exit: 500 }}>
         <Loading bgcolor="rgb(12, 11, 13)">
-          <video src="videos/d11.mp4" autoPlay muted onEnded={() => setLoading(false)} />
+          <video
+            ref={ref}
+            src="videos/d11.mp4"
+            autoPlay
+            muted
+            onEnded={() => setLoading(false)}
+          />
         </Loading>
       </Fade>
     </StyledContainer>
