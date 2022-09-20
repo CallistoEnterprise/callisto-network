@@ -102,7 +102,7 @@ const Metrics: React.FC<any> = ({ active }) => {
 const Metric1 = styled(Box)`
   position: absolute;
   top: 50%;
-  left: 475.53px;
+  left: 25%;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
@@ -125,7 +125,7 @@ const Metric1 = styled(Box)`
 const Metric2 = styled(Box)`
   position: absolute;
   top: 50%;
-  right: 475.53px;
+  right: 25%;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
