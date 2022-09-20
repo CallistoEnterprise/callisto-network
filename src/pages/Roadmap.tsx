@@ -93,15 +93,19 @@ const Content = styled(Box)`
     }
   }
   > div:nth-of-type(2) {
+    text-align: right;
     font-weight: 300;
     font-size: 22px;
     line-height: 27px;
-    text-align: center;
     letter-spacing: -0.03em;
     color: #ffffff;
     @media (max-height: 800px) {
-      font-size: 15px;
-      line-height: 20px;
+      font-size: 12px;
+      line-height: 17px;
+    }
+    @media (max-width: 550px) {
+      font-size: 14px;
+      line-height: 19px;
     }
   }
   @media (max-width: 400px) {
@@ -139,9 +143,9 @@ const Text1 = styled(Box)`
     font-size: 30px;
     line-height: 43px;
   }
-  @media (max-height: 800px) {
-    font-size: 25px;
-    line-height: 38px;
+  @media (max-width: 550px) {
+    font-size: 18px;
+    line-height: 31px;
   }
 `;
 
@@ -165,8 +169,10 @@ const Title = styled(Box)`
   letter-spacing: -0.05em;
   color: #ffffff;
   margin-bottom: 44.41px;
-  @media (max-height: 730px) {
+  @media (max-width: 730px) {
     margin-bottom: 10px;
+    font-size: 36px;
+    line-height: 43px;
   }
 `;
 
@@ -187,6 +193,10 @@ const StyledContainer = styled(Box)`
     padding-bottom: 59.1px;
     > video:first-of-type {
       display: none;
+    }
+    @media (max-height: 600px) {
+      padding-top: 70px;
+      padding-bottom: 32px;
     }
   }
 `;

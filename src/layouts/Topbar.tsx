@@ -16,6 +16,7 @@ const Topbar: React.FC = () => {
     <StyledContainer>
       <Box display="flex">
         <img src="images/Callisto Logo.png" alt="" />
+        <img src="images/Clo Logo Mobile.png" alt=''/>
         <Box display="flex" alignItems="center">
           <PCMenu display="flex" alignItems="center">
             <span>
@@ -480,6 +481,16 @@ const StyledContainer = styled(Box)`
     >img {
       @media (max-width: 500px) {
         width: 103px;
+      }
+    }
+    >img:first-of-type {
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
+    >img:nth-of-type(2) {
+      @media (min-width: 769px) {
+        display: none;
       }
     }
 
