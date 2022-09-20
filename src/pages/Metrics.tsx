@@ -2,7 +2,7 @@ import React, { useState, useRef, useMemo } from "react";
 import styled from "@mui/styled-engine-sc";
 import { Box, Fade } from "@mui/material";
 import { useCountUp } from "react-countup";
-import axios from "axios"
+import axios from "axios";
 
 const Metrics: React.FC<any> = ({ active }) => {
   const metric1 = useRef(null);
@@ -17,7 +17,7 @@ const Metrics: React.FC<any> = ({ active }) => {
     start: 0,
     end: metricData.monthly_transactions,
     delay: 0,
-    duration: 5,
+    duration: 3,
     separator: ",",
   });
   const { update: start2, reset: reset2 } = useCountUp({
@@ -25,7 +25,7 @@ const Metrics: React.FC<any> = ({ active }) => {
     start: 0,
     end: metricData.netwok_hashrate,
     delay: 0,
-    duration: 6,
+    duration: 4,
     separator: ",",
     decimal: ".",
     decimals: 2,
@@ -35,33 +35,29 @@ const Metrics: React.FC<any> = ({ active }) => {
     start: 0,
     end: metricData.frozen_coins,
     delay: 0,
-    duration: 7,
+    duration: 5,
     separator: ",",
     decimal: ".",
     decimals: 3,
   });
 
-  useMemo(async() => {
+  useMemo(async () => {
     if (active) {
-      // const tmp = {
-      //   monthly_transactions: 900102,
-      //   total_wallets: 1641399,
-      //   frozen_coins: 1180191753.6087244,
-      //   netwok_hashrate: 385.54,
-      // };
       const {
         data: { result },
       } = await axios.get("https://cloe.deta.dev/clo_metrics");
-      let tmp = {...result};
-      tmp.netwok_hashrate = parseFloat(result.netwok_hashrate.replace(" GH/s", ""));
+      let tmp = { ...result };
+      tmp.netwok_hashrate = parseFloat(
+        result.netwok_hashrate.replace(" GH/s", "")
+      );
       console.log(tmp);
       setMetricData(tmp);
-      setTimeout(() => setOpen1(true), 1000);
-      setTimeout(() => setOpen2(true), 1500);
-      setTimeout(() => setOpen3(true), 2000);
-      reset1()
-      reset2()
-      reset3()
+      setTimeout(() => setOpen1(true), 700);
+      setTimeout(() => setOpen2(true), 1000);
+      setTimeout(() => setOpen3(true), 1300);
+      reset1();
+      reset2();
+      reset3();
       start1(tmp.monthly_transactions);
       start2(tmp.netwok_hashrate);
       start3(tmp.frozen_coins);

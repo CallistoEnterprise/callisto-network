@@ -15,43 +15,23 @@ const Roadmap: React.FC<any> = ({ active }) => {
   return (
     <StyledContainer>
       <video ref={video} src="videos/Roadmap_H.mp4" muted loop />
-      <Box display="flex" flexDirection="column" alignItems="center" height="100%">
+      <Box
+        display="flex"
+        flexDirection="column"
+        alignItems="center"
+        height="100%"
+      >
         <Title>Roadmap</Title>
         <Maps>
           <Box>
-            <Text1>Q1</Text1>
+            <Text1>Q4</Text1>
             <Text2>2022</Text2>
             <Content>
+              <Box>Infrastructure</Box>
               <Box>
-                Security
+                Masternodes Launch
                 <br />
-                Department
-              </Box>
-              <Box>
-                Mileston 1<br />
-                Mileston 2
-              </Box>
-            </Content>
-          </Box>
-          <Box>
-            <Text1>Q2</Text1>
-            <Text2>2022</Text2>
-            <Content>
-              <Box>Service</Box>
-              <Box>
-                Mileston 1<br />
-                Mileston 2
-              </Box>
-            </Content>
-          </Box>
-          <Box>
-            <Text1>Q3</Text1>
-            <Text2>2022</Text2>
-            <Content>
-              <Box>Infracstructure</Box>
-              <Box>
-                Mileston 1<br />
-                Mileston 2
+                New Monetary Policy
               </Box>
             </Content>
           </Box>
@@ -59,11 +39,34 @@ const Roadmap: React.FC<any> = ({ active }) => {
             <Text1>Q4</Text1>
             <Text2>2022</Text2>
             <Content>
-              <Box>PoW</Box>
               <Box>
-                Mileston 1<br />
-                Mileston 2
+                Service
+                <br />
+                Department
               </Box>
+              <Box>
+                Hack Investigation Department
+                <br />
+                Security Department V2
+                <br />
+                Migration Service
+              </Box>
+            </Content>
+          </Box>
+          <Box>
+            <Text1>Q1</Text1>
+            <Text2>2023</Text2>
+            <Content>
+              <Box>PoW</Box>
+              <Box>ZPoW Implementation</Box>
+            </Content>
+          </Box>
+          <Box>
+            <Text1>Q1</Text1>
+            <Text2>2023</Text2>
+            <Content>
+              <Box></Box>
+              <Box>Distributed Insurance</Box>
             </Content>
           </Box>
         </Maps>
