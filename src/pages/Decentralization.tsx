@@ -377,6 +377,7 @@ const StyledContainer = styled(Box)<any>`
     position: absolute;
     top: 50%;
     left: 50%;
+    width: 300px;
     transform: translate(-50%, calc(-50% - 63.56px));
     z-index: 2;
     transition: 0.4s;
