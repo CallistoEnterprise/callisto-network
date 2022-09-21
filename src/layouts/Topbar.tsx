@@ -412,7 +412,7 @@ const MobileMenu = styled(Box)`
   padding: 25.61px 25.64px;
   > div {
     cursor: pointer;
-    transition: 0.3s;
+    /* transition: 0.3s; */
     font-weight: 600;
     font-size: 20.6761px;
     line-height: 25px;
@@ -450,10 +450,10 @@ const PCMenu = styled(Box)`
   > span {
     cursor: pointer;
     position: relative;
-    transition: .1s;
+    /* transition: .1s; */
     > div {
       pointer-events: none;
-      transition: 1s;
+      /* transition: 1s; */
       opacity: 0;
     }
     &:hover {
