@@ -374,12 +374,13 @@ const StyledContainer = styled(Box)<any>`
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 300px;
+    width: 700px;
     transform: translate(-50%, calc(-50% - 63.56px));
     z-index: 2;
     transition: 0.4s;
     @media (max-width: 1024px) {
-      width: 50%;
+      width: 300px;
+      transform: translate(-50%, -50%);
     }
     @media (max-width: 768px) {
       width: 320px;
@@ -389,8 +390,8 @@ const StyledContainer = styled(Box)<any>`
       width: 240px;
       transform: translate(-50%, -50%);
     }
-    @media (max-height: 700px) {
-      width: 240px;
+    @media (max-height: 1000px) {
+      width: 300px !important;
       transform: translate(-50%, -50%);
     }
   }
