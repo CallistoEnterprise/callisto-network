@@ -25,7 +25,7 @@ const Layout: React.FC<Props> = ({ children }: any) => {
         <Loading bgcolor="rgb(12, 11, 13)">
           <video
             ref={ref}
-            src="videos/d11.mp4"
+            src="videos/Load_VP8.webm"
             autoPlay
             muted
             onEnded={() => setLoading(false)}
@@ -45,8 +45,7 @@ const Loading = styled(Box)`
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 400px;
-    height: 400px;
+    width: 60vw;
     transform: translate(-50%, -50%);
   }
 `;

@@ -14,7 +14,7 @@ const Roadmap: React.FC<any> = ({ active }) => {
   }, [active]);
   return (
     <StyledContainer>
-      <video ref={video} src="videos/Roadmap_H.mp4" muted loop />
+      <video ref={video} src="videos/Roadmap_H.264.webm" muted loop />
       <Box
         display="flex"
         flexDirection="column"

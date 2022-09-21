@@ -83,7 +83,7 @@ const Decentralization: React.FC<any> = ({
       <video src="videos/Stars.webm" autoPlay muted loop />
       <video
         ref={section1[0]}
-        src="videos/Logo_Anim Hi Quality.webm"
+        src="videos/Logo_Anim M.webm"
         autoPlay
         muted
         loop
@@ -374,11 +374,14 @@ const StyledContainer = styled(Box)<any>`
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 700px;
+    height: 60vh;
     transform: translate(-50%, calc(-50% - 63.56px));
     z-index: 2;
     transition: 0.4s;
-    @media (max-width: 1024px) {
+    @media (max-width: 1600px) and (max-height: 1000px) {
+      height: 50vh;
+    }
+    /* @media (max-width: 1024px) {
       width: 300px;
       transform: translate(-50%, -50%);
     }
@@ -393,7 +396,7 @@ const StyledContainer = styled(Box)<any>`
     @media (max-height: 1000px) {
       width: 300px !important;
       transform: translate(-50%, -50%);
-    }
+    } */
   }
 `;
 
