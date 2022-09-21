@@ -182,7 +182,7 @@ const Pagination = styled(Box)`
   > div {
     width: 5.6px;
     height: 5.6px;
-    transition: 0.3s;
+    /* transition: 0.3s; */
     background: #d9d9d9;
     border-radius: 50%;
   }
@@ -204,7 +204,7 @@ const StyledContainer = styled(Box)`
     > section {
       position: absolute;
       width: 100%;
-      transition: 1s;
+      /* transition: 1s; */
     }
   }
 `;

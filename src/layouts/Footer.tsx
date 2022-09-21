@@ -319,7 +319,7 @@ const Head = styled(Box)<any>`
         }
       }
       > * + * {
-        transition: 0.5s;
+        /* transition: 0.5s; */
         margin-top: ${({ open1 }: any) => (open1 ? 24 : 0)}px;
       }
     }
@@ -342,7 +342,7 @@ const Head = styled(Box)<any>`
         }
       }
       > * + * {
-        transition: 0.5s;
+        /* transition: 0.5s; */
         margin-top: ${({ open2 }: any) => (open2 ? 24 : 0)}px;
       }
     }
