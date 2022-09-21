@@ -49,10 +49,15 @@ const Pictures = styled(Box)`
       height: auto !important;
       justify-content: center;
     }
-    > div:last-of-type > div {
-      display: flex;
-      align-items: center;
-      align-self: unset;
+    > div:last-of-type {
+      > div:first-of-type {
+        display: flex;
+        align-items: center;
+        align-self: unset;
+      }
+      > div:nth-of-type(2) {
+        display: none;
+      }
     }
   }
   svg:first-of-type {
@@ -81,12 +86,19 @@ const Pictures = styled(Box)`
     right: 285px;
   }
   @media (max-height: 675px) {
+    transform: scale(.5);
     >div:nth-of-type(2) {
-      display: none;
+      bottom: 100%;
     }
   }
   @media (max-width: 600px) {
     right: 75px;
+  }
+  @media (max-height: 560px) {
+    bottom: 17%;
+  }
+  @media (max-width: 360px) {
+    right: 30px;
   }
 `;
 
