@@ -2,13 +2,7 @@ import React, { useState, useMemo, useRef } from "react";
 import styled from "@mui/styled-engine-sc";
 import { Box } from "@mui/material";
 
-const Decentralization: React.FC<any> = ({
-  next,
-  page,
-  setPage,
-  setFade,
-  landingPage,
-}) => {
+const Decentralization: React.FC<any> = ({ next, page, setPage, setFade, landingPage }) => {
   const [playing, setPlaying] = useState(false);
   const [touchPoint, setTouchPoint] = useState(0);
   const [section1] = useState([useRef<any>(), useRef<any>()]);
@@ -81,56 +75,49 @@ const Decentralization: React.FC<any> = ({
     >
       <img src="images/Earth.png" alt="" />
       <video src="videos/Stars.webm" autoPlay muted loop />
-      <video
-        ref={section1[0]}
-        src="videos/Logo_Anim M.webm"
-        autoPlay
-        muted
-        loop
-      />
-      <CuttingText component='h1' ref={section1[1]}>Cutting Edge Decentralization</CuttingText>
+      <video ref={section1[0]} src="videos/Logo_Anim M.webm" autoPlay muted loop />
+      <CuttingText component="h1" ref={section1[1]}>
+        Cutting Edge Decentralization
+      </CuttingText>
       <Section2 ref={section2[0]} style={{ opacity: 0 }}>
-        <Title component="h1">Why Callisto Network?</Title>
+        <Title component="article">Why Callisto Network?</Title>
         <Box position="relative">
           <Content ref={refs[0]}>
             <Subtitle component="h2">Proof of Work</Subtitle>
             <Text mt="17.9px" maxWidth="745.57px">
-              A proof-of-work blockchain compatible with EVM applications and
-              resistant to <span>51% attacks.</span>
+              A proof-of-work blockchain compatible with EVM applications and resistant to{" "}
+              <span>51% attacks.</span>
             </Text>
             <Text mt="11.27px" maxWidth="825.14px">
-              By introducing <span>ZPoW</span>, we aim to address the
-              limitations of <span>proof-of-work</span> consensus by enabling a
-              throughput of up to <span>100 000 transactions</span> per second
-              with a level of security identical to Bitcoin.
+              By introducing <span>ZPoW</span>, we aim to address the limitations of{" "}
+              <span>proof-of-work</span> consensus by enabling a throughput of up to{" "}
+              <span>100 000 transactions</span> per second with a level of security identical to
+              Bitcoin.
             </Text>
           </Content>
           <Content ref={refs[1]} style={{ opacity: 0 }}>
             <Subtitle component="h2">Security</Subtitle>
             <Text mt="17.9px" maxWidth="745.57px">
-              Security is the real catalyst for the adoption of any technology;
-              with this in mind, <span>Callisto Network</span> was born with the
-              vision of fostering the blockchain ecosystem's security.
+              Security is the real catalyst for the adoption of any technology; with this in mind,{" "}
+              <span>Callisto Network</span> was born with the vision of fostering the blockchain
+              ecosystem's security.
             </Text>
             <Text mt="11.27px" maxWidth="825.14px">
-              Having contributed to the most popular blockchains and crypto
-              projects, we are leveraging our experience to establish{" "}
-              <span>Callisto Network</span> as the most advanced and{" "}
-              <span>secure proof of work blockchain.</span>
+              Having contributed to the most popular blockchains and crypto projects, we are
+              leveraging our experience to establish <span>Callisto Network</span> as the most
+              advanced and <span>secure proof of work blockchain.</span>
             </Text>
           </Content>
           <Content ref={refs[2]} style={{ opacity: 0 }}>
             <Subtitle component="h2">Monetary Policy</Subtitle>
             <Text mt="17.9px" maxWidth="745.57px">
-              One of Callisto Network's unique features is its{" "}
-              <span>Dynamic Monetary Policy</span>, which introduces a dynamic
-              inflation/deflation rate based on the usage of blockchain with
-              incentives for miners to secure the network continuously.
+              One of Callisto Network's unique features is its <span>Dynamic Monetary Policy</span>,
+              which introduces a dynamic inflation/deflation rate based on the usage of blockchain
+              with incentives for miners to secure the network continuously.
             </Text>
             <Text mt="11.27px" maxWidth="825.14px">
-              A burn mechanism ensures that CLO coins have a long-term total
-              supply of <span>3 billion</span>; thereby, CLO can be considered
-              as a store of value asset.
+              A burn mechanism ensures that CLO coins have a long-term total supply of{" "}
+              <span>3 billion</span>; thereby, CLO can be considered as a store of value asset.
             </Text>
           </Content>
         </Box>
@@ -139,13 +126,7 @@ const Decentralization: React.FC<any> = ({
           <Page active={page === 1 ? 1 : 0} onClick={() => click(1)} />
           <Page active={page === 2 ? 1 : 0} onClick={() => click(2)} />
         </Pagination>
-        <video
-          ref={videoRefs[0]}
-          src="videos/ZPoW_VP9.webm"
-          autoPlay
-          muted
-          loop
-        />
+        <video ref={videoRefs[0]} src="videos/ZPoW_VP9.webm" autoPlay muted loop />
         <video
           ref={videoRefs[1]}
           src="videos/Security_VP9.webm"
@@ -210,7 +191,7 @@ const Pagination = styled(Box)`
 
 const Text = styled(Box)`
   font-weight: 300;
-  font-size: 22px;
+  font-size: 1.375em;
   line-height: 27px;
   letter-spacing: -0.03em;
   color: white;
@@ -223,47 +204,34 @@ const Text = styled(Box)`
     }
   }
   @media (max-width: 500px) {
-    font-size: 16px;
+    font-size: 1em;
     line-height: 20px;
   }
 `;
 
 const Subtitle = styled(Box)`
   font-weight: 600;
-  font-size: 35px;
+  font-size: 2.188em;
   line-height: 43px;
   letter-spacing: -0.05em;
   color: white;
   @media (max-width: 360px) {
-    font-size: 28px;
+    font-size: 1.75em;
     line-height: 36px;
   }
   @media (max-width: 320px) {
-    font-size: 21px;
+    font-size: 1.313em;
     line-height: 29px;
   }
 `;
 
 const Title = styled(Box)`
-  font-weight: 700;
-  font-size: 45px;
-  line-height: 55px;
-  letter-spacing: -0.05em;
   color: white;
   width: max-content;
+
   @media (max-width: 768px) {
     top: 40px;
-    font-size: 42px;
-    line-height: 51px;
     width: auto;
-  }
-  @media (max-width: 360px) {
-    font-size: 36px;
-    line-height: 45px;
-  }
-  @media (max-width: 320px) {
-    font-size: 22px;
-    line-height: 31px;
   }
 `;
 
@@ -307,7 +275,7 @@ const CuttingText = styled(Box)`
   transform: translateX(-50%);
   transition: 0.4s;
   font-weight: 700;
-  font-size: 35px;
+  font-size: 2.188em;
   line-height: 43px;
   text-align: center;
   letter-spacing: -0.05em;
@@ -317,11 +285,11 @@ const CuttingText = styled(Box)`
     bottom: 68.81px;
   }
   @media (max-width: 360px) {
-    font-size: 36px;
+    font-size: 2.25em;
     line-height: 45px;
   }
   @media (max-width: 320px) {
-    font-size: 22px;
+    font-size: 1.375em;
     line-height: 31px;
   }
 `;

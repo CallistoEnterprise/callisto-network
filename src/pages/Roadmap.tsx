@@ -83,36 +83,36 @@ const Content = styled(Box)`
   margin-top: 8.42px;
   > div:first-of-type {
     font-weight: 700;
-    font-size: 25px;
+    font-size: 1.563em;
     line-height: 30px;
     letter-spacing: -0.05em;
     color: #ffffff;
     @media (max-height: 800px) {
-      font-size: 18px;
+      font-size: 1.125em;
       line-height: 23px;
     }
     @media (max-width: 360px) {
-      font-size: 12px;
+      font-size: 0.75em;
       line-height: 17px;
     }
   }
   > div:nth-of-type(2) {
     text-align: right;
     font-weight: 300;
-    font-size: 22px;
+    font-size: 1.375em;
     line-height: 27px;
     letter-spacing: -0.03em;
     color: #ffffff;
     @media (max-height: 800px) {
-      font-size: 12px;
+      font-size: 0.75em;
       line-height: 17px;
     }
     @media (max-width: 550px) {
-      font-size: 14px;
+      font-size: 0.875em;
       line-height: 19px;
     }
     @media (max-width: 360px) {
-      font-size: 10px;
+      font-size: 0.625em;
       line-height: 15px;
     }
   }
@@ -122,37 +122,37 @@ const Content = styled(Box)`
 `;
 const Text2 = styled(Box)`
   font-weight: 500;
-  font-size: 28.3594px;
+  font-size: 1.772em;
   line-height: 35px;
   text-align: center;
   letter-spacing: -0.05em;
   color: #ffffff;
   @media (max-height: 1000px) {
-    font-size: 18px;
+    font-size: 1.125em;
     line-height: 25px;
   }
   @media (max-height: 800px) {
-    font-size: 14px;
+    font-size: 0.875em;
     line-height: 21px;
   }
 `;
 
 const Text1 = styled(Box)`
   font-weight: 700;
-  font-size: 56.5488px;
+  font-size: 3.534em;
   line-height: 69px;
   letter-spacing: -0.05em;
   color: #ffffff;
   @media (max-height: 1000px) {
-    font-size: 40px;
+    font-size: 2.5em;
     line-height: 53px;
   }
   @media (max-height: 900px) {
-    font-size: 30px;
+    font-size: 1.875em;
     line-height: 43px;
   }
   @media (max-width: 550px) {
-    font-size: 18px;
+    font-size: 1.125em;
     line-height: 31px;
   }
 `;
@@ -172,18 +172,18 @@ const Maps = styled(Box)`
 
 const Title = styled(Box)`
   font-weight: 600;
-  font-size: 45px;
+  font-size: 2.813em;
   line-height: 55px;
   letter-spacing: -0.05em;
   color: #ffffff;
   margin-bottom: 44.41px;
   @media (max-width: 730px) {
     margin-bottom: 10px;
-    font-size: 36px;
+    font-size: 2.25em;
     line-height: 43px;
   }
   @media (max-width: 320px) {
-    font-size: 22px;
+    font-size: 1.375em;
     line-height: 31px;
   }
 `;

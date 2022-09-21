@@ -112,7 +112,7 @@ const Title = styled(Box)`
   left: 159.06px;
   transform: translateY(-50%);
   font-weight: 600;
-  font-size: 65px;
+  font-size: 4.063em;
   line-height: 79px;
   letter-spacing: -0.05em;
   color: white;
@@ -127,7 +127,7 @@ const TitleMobile = styled(Box)`
   left: 50%;
   transform: translateX(-50%);
   font-weight: 600;
-  font-size: 45px;
+  font-size: 2.813em;
   line-height: 55px;
   letter-spacing: -0.05em;
   color: #ffffff;

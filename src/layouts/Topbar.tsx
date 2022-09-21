@@ -332,7 +332,7 @@ const MenuItems = styled(Box)`
 
 const Title = styled(Box)`
   font-weight: 700;
-  font-size: 22px;
+  font-size: 1.375em;
   line-height: 27px;
   letter-spacing: -0.05em;
   color: #ffffff;
@@ -340,7 +340,7 @@ const Title = styled(Box)`
 
 const Text2 = styled(Box)`
   font-weight: 400;
-  font-size: 14px;
+  font-size: 0.875em;
   line-height: 17px;
   letter-spacing: -0.05em;
   color: white;
@@ -348,7 +348,7 @@ const Text2 = styled(Box)`
 
 const Text1 = styled(Box)`
   font-weight: 600;
-  font-size: 20.6761px;
+  font-size: 1.292em;
   line-height: 25px;
   letter-spacing: -0.05em;
   color: white;
@@ -414,9 +414,8 @@ const MobileMenu = styled(Box)`
     cursor: pointer;
     transition: 0.3s;
     font-weight: 600;
-    font-size: 20.6761px;
+    font-size: 1.292em;
     line-height: 25px;
-    letter-spacing: -0.05em;
     color: white;
   }
   >div+div {
@@ -440,7 +439,7 @@ const MenuIcon = styled(Box)`
 `;
 
 const PCMenu = styled(Box)`
-  font-size: 18px;
+  font-size: 1.125em;
   line-height: 22px;
   letter-spacing: -0.05em;
   color: white;

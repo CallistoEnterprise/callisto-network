@@ -32,7 +32,7 @@ const Footer: React.FC = () => {
           <Box component="div" color="white">
             <img src="images/Callisto Logo.png" alt="" />
             <Box display="flex" flexDirection="column">
-              <Box component="span" fontSize="16px" lineHeight="19px">
+              <Box component="span" fontSize="1em" lineHeight="19px">
                 All rights reserved by
               </Box>
               <Box
@@ -213,7 +213,7 @@ const List = styled(Box)`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  font-size: 16px;
+  font-size: 1em;
   line-height: 15px;
   letter-spacing: 0.2px;
   color: #ffffff;
@@ -248,7 +248,7 @@ const Socials = styled(Box)`
 
 const JoinText = styled(Box)`
   font-weight: 700;
-  font-size: 16px;
+  font-size: 1em;
   line-height: 15px;
   letter-spacing: 0.2px;
   color: #ffffff;
@@ -359,7 +359,7 @@ const Head = styled(Box)<any>`
 `;
 
 const CopyrightBox = styled(Box)`
-  font-size: 16px;
+  font-size: 1em;
   line-height: 100%;
   letter-spacing: -0.5px;
   color: #ffffff;
@@ -374,7 +374,7 @@ const CopyrightBox = styled(Box)`
     align-self: center;
     margin-top: 23.42px;
     font-family: "Gilroy";
-    font-size: 16px;
+    font-size: 1em;
     line-height: 19px;
     > svg {
       display: none;

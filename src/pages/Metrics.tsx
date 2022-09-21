@@ -70,7 +70,7 @@ const Metrics: React.FC<any> = ({ active }) => {
       <Fade in={open3} timeout={500}>
         <video src="videos/Logo-Anim_VP9.webm" autoPlay muted loop />
       </Fade>
-      <Title>Callisto Network Metrics</Title>
+      <Title component='article'>Callisto Network Metrics</Title>
       <Fade in={open1} timeout={500}>
         <Metric1>
           <Text1>Monthly Transaction</Text1>
@@ -164,24 +164,24 @@ const Metric3 = styled(Box)`
 
 const Text1 = styled(Box)`
   font-weight: 300;
-  font-size: 22px;
+  font-size: 1.375em;
   line-height: 27px;
   text-align: center;
   letter-spacing: -0.03em;
   @media (max-width: 360px) {
-    font-size: 11px;
-    line-height: 16px;
+    font-size: 0.688em;
+    line-height: 1em;
   }
 `;
 
 const Text2 = styled(Box)`
   font-weight: 600;
-  font-size: 30px;
+  font-size: 1.875em;
   line-height: 37px;
   text-align: center;
   letter-spacing: -0.05em;
   @media (max-width: 360px) {
-    font-size: 15px;
+    font-size: 0.938em;
     line-height: 22px;
   }
 `;
@@ -191,24 +191,11 @@ const Title = styled(Box)`
   top: 178.66px;
   left: 50%;
   transform: translateX(-50%);
-  font-weight: 700;
-  font-size: 45px;
-  line-height: 55px;
-  letter-spacing: -0.05em;
   text-align: center;
   width: 100%;
+
   @media (max-width: 768px) {
     top: 133.67px;
-    font-size: 42px;
-    line-height: 51px;
-  }
-  @media (max-width: 360px) {
-    font-size: 36px;
-    line-height: 45px;
-  }
-  @media (max-width: 320px) {
-    font-size: 22px;
-    line-height: 31px;
   }
 `;
 
