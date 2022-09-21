@@ -66,7 +66,7 @@ const Metrics: React.FC<any> = ({ active }) => {
 
   return (
     <StyledContainer>
-      <video src="videos/Bg_H.mp4" autoPlay muted loop />
+      <video src="videos/Bg_H.webm" autoPlay muted loop />
       <Fade in={open3} timeout={500}>
         <video src="videos/Logo-Anim_VP9.webm" autoPlay muted loop />
       </Fade>
