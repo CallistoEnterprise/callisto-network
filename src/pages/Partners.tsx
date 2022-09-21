@@ -63,23 +63,32 @@ const Pictures = styled(Box)`
     transform: translateX(100px);
     stroke: white;
   }
+  @media (min-width: 1921px) {
+    right: 34.7vw;
+    transform: translateX(50%);
+  }
   @media (max-width: 1000px) {
     right: 435px;
+    svg {
+      display: none;
+    }
+  }
+  @media (max-height: 840px) {
+    top: unset;
+    bottom: 30%;
   }
   @media (max-width: 800px) {
     right: 285px;
   }
-  @media (max-width: 768px) {
-    top: unset;
-    bottom: 50%;
-    svg {
+  @media (max-height: 675px) {
+    >div:nth-of-type(2) {
       display: none;
     }
   }
   @media (max-width: 600px) {
     right: 75px;
   }
-  @media (width: 2312px) and (height: 1080px) {
+  /* @media (width: 2312px) and (height: 1080px) {
     right: 670px;
   }
   @media (width: 912px) and (height: 1368px) {
@@ -103,7 +112,7 @@ const Pictures = styled(Box)`
   }
   @media (width: 375px) and (height: 667px) {
     top: 40%;
-  }
+  } */
 `;
 
 const Title = styled(Box)`
