@@ -204,12 +204,7 @@ const Pagination = styled(Box)`
     border-radius: 50%;
   }
   @media (max-width: 768px) {
-    /* bottom: 85.34px;
-    left: 51.56px; */
     display: none;
-  }
-  @media (width: 1024px) and (height: 600px) {
-    bottom: 60px;
   }
 `;
 
@@ -389,9 +384,6 @@ const StyledContainer = styled(Box)<any>`
     @media (max-width: 768px) {
       width: 320px;
       transform: translate(-50%, -50%);
-    }
-    @media (width: 1024px) and (height: 600px) {
-      width: 300px;
     }
     @media (max-width: 400px) {
       width: 240px;

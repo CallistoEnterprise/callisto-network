@@ -82,6 +82,10 @@ const Pictures = styled(Box)`
     top: unset;
     bottom: 30%;
   }
+  @media (min-width: 1921px) and (max-height: 840px) {
+    top: unset;
+    bottom: 25%;
+  }
   @media (max-width: 800px) {
     right: 285px;
   }
@@ -130,9 +134,6 @@ const TitleMobile = styled(Box)`
   @media (min-width: 1401px) {
     display: none;
   }
-  @media (width: 390px) and (height: 844px) {
-    left: 85%;
-  }
 `;
 
 const StyledContainer = styled(Box)`
@@ -160,12 +161,6 @@ const StyledContainer = styled(Box)`
         object-position: 250px;
       }
       @media (max-width: 600px) {
-        object-position: 460px;
-      }
-      @media (width: 912px) and (height: 1368px) {
-        height: 935px;
-      }
-      @media (width: 412px) and (height: 914px) {
         object-position: 460px;
       }
       @media (max-width: 360px) {

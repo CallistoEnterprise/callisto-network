@@ -157,9 +157,6 @@ const ScrollIcon = styled(Box)`
     bottom: 32px;
     right: 64px;
   }
-  @media (width: 1024px) and (height: 600px) {
-    right: 64px;
-  }
 `;
 
 const Page = styled(Box)<any>`
@@ -190,9 +187,6 @@ const Pagination = styled(Box)`
     display: none;
   }
   @media (max-width: 1200px) {
-    right: 64px;
-  }
-  @media (width: 1024px) and (height: 600px) {
     right: 64px;
   }
 `;
