@@ -168,6 +168,10 @@ const Text1 = styled(Box)`
   line-height: 27px;
   text-align: center;
   letter-spacing: -0.03em;
+  @media (max-width: 360px) {
+    font-size: 11px;
+    line-height: 16px;
+  }
 `;
 
 const Text2 = styled(Box)`
@@ -176,6 +180,10 @@ const Text2 = styled(Box)`
   line-height: 37px;
   text-align: center;
   letter-spacing: -0.05em;
+  @media (max-width: 360px) {
+    font-size: 15px;
+    line-height: 22px;
+  }
 `;
 
 const Title = styled(Box)`
@@ -193,6 +201,14 @@ const Title = styled(Box)`
     top: 133.67px;
     font-size: 42px;
     line-height: 51px;
+  }
+  @media (max-width: 360px) {
+    font-size: 36px;
+    line-height: 45px;
+  }
+  @media (max-width: 320px) {
+    font-size: 22px;
+    line-height: 31px;
   }
 `;
 

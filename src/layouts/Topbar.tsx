@@ -369,6 +369,9 @@ const MobileMenuList = styled(Box)`
   width: 360px;
   max-height: calc(100% - 40px);
   overflow: auto;
+  @media (max-width: 360px) {
+    width: 260px;
+  }
   > *+* {
     margin-top: 30.69px;
   }

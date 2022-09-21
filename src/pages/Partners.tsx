@@ -88,31 +88,6 @@ const Pictures = styled(Box)`
   @media (max-width: 600px) {
     right: 75px;
   }
-  /* @media (width: 2312px) and (height: 1080px) {
-    right: 670px;
-  }
-  @media (width: 912px) and (height: 1368px) {
-    right: 530px;
-  }
-  @media (width: 540px) and (height: 720px) {
-    top: 41%;
-    right: 75px;
-  }
-  @media (width: 768px) and (height: 1024px) {
-    top: unset;
-    right: 285px;
-  }
-  @media (width: 1024px) and (height: 600px) {
-    top: 25%;
-    right: 530px;
-  }
-  @media (width: 1280px) and (height: 800px) {
-    top: 15%;
-    right: 535px;
-  }
-  @media (width: 375px) and (height: 667px) {
-    top: 40%;
-  } */
 `;
 
 const Title = styled(Box)`

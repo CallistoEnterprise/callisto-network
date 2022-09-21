@@ -88,7 +88,7 @@ const Decentralization: React.FC<any> = ({
         muted
         loop
       />
-      <CuttingText ref={section1[1]}>Cutting Edge Decentralization</CuttingText>
+      <CuttingText component='h1' ref={section1[1]}>Cutting Edge Decentralization</CuttingText>
       <Section2 ref={section2[0]} style={{ opacity: 0 }}>
         <Title component="h1">Why Callisto Network?</Title>
         <Box position="relative">
@@ -239,6 +239,14 @@ const Subtitle = styled(Box)`
   line-height: 43px;
   letter-spacing: -0.05em;
   color: white;
+  @media (max-width: 360px) {
+    font-size: 28px;
+    line-height: 36px;
+  }
+  @media (max-width: 320px) {
+    font-size: 21px;
+    line-height: 29px;
+  }
 `;
 
 const Title = styled(Box)`
@@ -253,6 +261,14 @@ const Title = styled(Box)`
     font-size: 42px;
     line-height: 51px;
     width: auto;
+  }
+  @media (max-width: 360px) {
+    font-size: 36px;
+    line-height: 45px;
+  }
+  @media (max-width: 320px) {
+    font-size: 22px;
+    line-height: 31px;
   }
 `;
 
@@ -279,34 +295,12 @@ const Section2 = styled(Box)`
       right: 50%;
       transform: translateX(50%);
     }
-    @media (max-width: 1600px) and (max-height: 830px) {
+    @media (max-width: 1600px) and (max-height: 1434px) {
+      bottom: 0;
+    }
+    @media (max-width: 1600px) and (max-height: 1000px) {
       display: none;
     }
-    /* @media (max-width: 1200px) {
-      bottom: 0px;
-    }
-    @media (max-width: 900px) {
-      bottom: 120px;
-    }
-    @media (max-width: 768px) {
-      bottom: 40px;
-      right: calc(50% + 25.78px);
-    }
-    @media (max-width: 500px) {
-      bottom: 60px;
-    } */
-    /* @media (max-width: 400px) and (max-height: 900px) {
-      display: none;
-    }
-    @media (width: 1024px) and (height: 600px) {
-      display: none;
-    }
-    @media (width: 1280px) and (height: 800px) {
-      display: none;
-    }
-    @media (width: 540px) and (height: 720px) {
-      display: none;
-    } */
   }
 `;
 
@@ -326,6 +320,14 @@ const CuttingText = styled(Box)`
   width: 100%;
   @media (max-width: 768px) {
     bottom: 68.81px;
+  }
+  @media (max-width: 360px) {
+    font-size: 36px;
+    line-height: 45px;
+  }
+  @media (max-width: 320px) {
+    font-size: 22px;
+    line-height: 31px;
   }
 `;
 
@@ -390,6 +392,14 @@ const StyledContainer = styled(Box)<any>`
     }
     @media (width: 1024px) and (height: 600px) {
       width: 300px;
+    }
+    @media (max-width: 400px) {
+      width: 240px;
+      transform: translate(-50%, -50%);
+    }
+    @media (max-height: 700px) {
+      width: 240px;
+      transform: translate(-50%, -50%);
     }
   }
 `;

@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useRef, useEffect } from "react";
+import React, { useState, useMemo, useRef } from "react";
 import { Box } from "@mui/material";
 import styled from "@mui/styled-engine-sc";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
@@ -6,7 +6,6 @@ import Decentralization from "./Decentralization";
 import Metrics from "./Metrics";
 import Roadmap from "./Roadmap";
 import Partners from "./Partners";
-import useWindowDimensions from "hooks/useDimensions";
 
 const Landing: React.FC = () => {
   const [scrollableDown, setScrollableDown] = useState(true);
@@ -24,13 +23,6 @@ const Landing: React.FC = () => {
     useRef<any>(),
     useRef<any>(),
   ]);
-  const screenWidth = useWindowDimensions().width;
-  const screenHeight = useWindowDimensions().height;
-
-  useEffect(() => {
-    if (screenWidth === 280 && screenHeight === 653) alert("Galaxy Fold is not supported");
-  }, [screenWidth, screenHeight]);
-
   useMemo(() => disableBodyScroll(document.body), []);
   useMemo(() => {
     setScrollableDown(page === 1 && decentPage <= 1 ? false : true);

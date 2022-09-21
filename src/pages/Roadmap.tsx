@@ -91,6 +91,10 @@ const Content = styled(Box)`
       font-size: 18px;
       line-height: 23px;
     }
+    @media (max-width: 360px) {
+      font-size: 12px;
+      line-height: 17px;
+    }
   }
   > div:nth-of-type(2) {
     text-align: right;
@@ -106,6 +110,10 @@ const Content = styled(Box)`
     @media (max-width: 550px) {
       font-size: 14px;
       line-height: 19px;
+    }
+    @media (max-width: 360px) {
+      font-size: 10px;
+      line-height: 15px;
     }
   }
   @media (max-width: 400px) {
@@ -173,6 +181,10 @@ const Title = styled(Box)`
     margin-bottom: 10px;
     font-size: 36px;
     line-height: 43px;
+  }
+  @media (max-width: 320px) {
+    font-size: 22px;
+    line-height: 31px;
   }
 `;
 
