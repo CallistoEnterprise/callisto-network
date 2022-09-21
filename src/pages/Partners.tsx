@@ -86,7 +86,7 @@ const Pictures = styled(Box)`
     right: 285px;
   }
   @media (max-height: 675px) {
-    transform: scale(.5);
+    transform: scale(.7);
     >div:nth-of-type(2) {
       bottom: 100%;
     }
@@ -167,6 +167,9 @@ const StyledContainer = styled(Box)`
       }
       @media (width: 412px) and (height: 914px) {
         object-position: 460px;
+      }
+      @media (max-width: 360px) {
+        object-position: 500px;
       }
     }
   }
