@@ -454,6 +454,8 @@ const PCMenu = styled(Box)`
       pointer-events: none;
       transition: 1s;
       opacity: 0;
+      max-height: calc(100vh - 150px);
+      overflow: auto;
     }
     &:hover {
       font-weight: 700;
