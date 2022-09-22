@@ -193,7 +193,6 @@ const Title = styled(Box)`
   transform: translateX(-50%);
   text-align: center;
   width: 100%;
-
   @media (max-width: 768px) {
     top: 133.67px;
   }
