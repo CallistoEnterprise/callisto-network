@@ -40,7 +40,7 @@ const Roadmap: React.FC<any> = ({ active }) => {
             <Text2>2022</Text2>
             <Content>
               <Box>
-                Service
+                Security
                 <br />
                 Department
               </Box>
@@ -65,7 +65,7 @@ const Roadmap: React.FC<any> = ({ active }) => {
             <Text1>Q1</Text1>
             <Text2>2023</Text2>
             <Content>
-              <Box></Box>
+              <Box>Security<br/>Department</Box>
               <Box>Distributed Insurance</Box>
             </Content>
           </Box>

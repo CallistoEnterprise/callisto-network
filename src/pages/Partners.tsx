@@ -99,7 +99,7 @@ const Pictures = styled(Box)`
     right: 75px;
   }
   @media (max-height: 560px) {
-    bottom: 17%;
+    bottom: 20%;
   }
   @media (max-width: 360px) {
     right: 30px;

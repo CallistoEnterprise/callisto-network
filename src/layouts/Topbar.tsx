@@ -391,14 +391,6 @@ const MenuList = styled(Box)`
     margin-top: 30.69px;
   }
   width: 360px;
-  &:before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 65px;
-    top: -65px;
-    left: 0;
-  }
 `;
 
 const MobileMenu = styled(Box)`
@@ -450,6 +442,14 @@ const PCMenu = styled(Box)`
     cursor: pointer;
     position: relative;
     transition: .1s;
+    &:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 65px;
+      top: 100%;
+      left: 0;
+    }
     > div {
       pointer-events: none;
       transition: 1s;
