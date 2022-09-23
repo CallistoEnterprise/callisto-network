@@ -281,6 +281,14 @@ const CuttingText = styled(Box)`
   letter-spacing: -0.05em;
   color: #ffffff;
   width: 100%;
+  @media (min-width: 1921px) {
+    font-size: 5em;
+    line-height: 1;
+  }
+  @media (min-width: 2501px) {
+    font-size: 6em;
+    line-height: 1;
+  }
   @media (max-width: 768px) {
     bottom: 68.81px;
   }
