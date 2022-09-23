@@ -209,6 +209,14 @@ const Title = styled(Box)`
   transform: translateX(-50%);
   text-align: center;
   width: 100%;
+  @media (min-width: 1921px) {
+    font-size: 6em;
+    line-height: 1;
+  }
+  @media (min-width: 2501px) {
+    font-size: 7em;
+    line-height: 1;
+  }
   @media (max-width: 768px) {
     top: 133.67px;
   }

@@ -344,6 +344,10 @@ const Text2 = styled(Box)`
   line-height: 17px;
   letter-spacing: -0.05em;
   color: white;
+  @media (min-width: 1921px) {
+    font-size: 1em;
+    line-height: 1;
+  }
 `;
 
 const Text1 = styled(Box)`
@@ -352,6 +356,9 @@ const Text1 = styled(Box)`
   line-height: 25px;
   letter-spacing: -0.05em;
   color: white;
+  @media (min-width: 1921px) {
+    line-height: 1.1;
+  }
 `;
 
 const MobileMenuList = styled(Box)`
@@ -381,7 +388,7 @@ const MenuList = styled(Box)`
   position: absolute;
   top: calc(100% + 50px);
   left: 0;
-  background: rgba(4, 31, 48, 0.81);
+  background: rgba(4, 31, 48, 0.95);
   border: 2px solid #d9d9d9;
   border-radius: 10px;
   padding: 25.61px 9px 25.61px 20.64px;
@@ -391,6 +398,10 @@ const MenuList = styled(Box)`
     margin-top: 30.69px;
   }
   width: 360px;
+  @media (min-width: 1921px) {
+    width: 600px;
+    padding: 40px 18px 40px 41.28px;
+  }
 `;
 
 const MobileMenu = styled(Box)`
@@ -398,7 +409,7 @@ const MobileMenu = styled(Box)`
   top: calc(100% + 20px);
   right: 0;
   width: max-content;
-  background: rgba(4, 31, 48, 0.81);
+  background: rgba(4, 31, 48, 0.95);
   border: 2px solid #d9d9d9;
   border-radius: 10px;
   padding: 25.61px 25.64px;
