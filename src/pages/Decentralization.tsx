@@ -198,6 +198,14 @@ const Text = styled(Box)`
   > span {
     font-weight: 600;
   }
+  @media (min-width: 1921px) and (min-height: 1201px) {
+    font-size: 2em;
+    line-height: 1;
+  }
+  @media (min-width: 2501px) and (min-height: 1601px) {
+    font-size: 3em;
+    line-height: 1;
+  }
   @media (max-width: 1000px) {
     > span {
       font-weight: 500;
@@ -215,6 +223,14 @@ const Subtitle = styled(Box)`
   line-height: 43px;
   letter-spacing: -0.05em;
   color: white;
+  @media (min-width: 1921px) {
+    font-size: 5em;
+    line-height: 1;
+  }
+  @media (min-width: 2501px) {
+    font-size: 6em;
+    line-height: 1;
+  }
   @media (max-width: 360px) {
     font-size: 1.75em;
     line-height: 36px;
@@ -229,6 +245,14 @@ const Title = styled(Box)`
   color: white;
   width: max-content;
 
+  @media (min-width: 1921px) {
+    font-size: 6em;
+    line-height: 1;
+  }
+  @media (min-width: 2501px) {
+    font-size: 7em;
+    line-height: 1;
+  }
   @media (max-width: 768px) {
     top: 40px;
     width: auto;
