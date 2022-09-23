@@ -168,6 +168,14 @@ const Text1 = styled(Box)`
   line-height: 27px;
   text-align: center;
   letter-spacing: -0.03em;
+  @media (min-width: 1921px) and (min-height: 500px) {
+    font-size: 2em;
+    line-height: 1;
+  }
+  @media (min-width: 2501px) and (min-height: 500px) {
+    font-size: 3em;
+    line-height: 1;
+  }
   @media (max-width: 360px) {
     font-size: 0.688em;
     line-height: 1em;
@@ -180,6 +188,14 @@ const Text2 = styled(Box)`
   line-height: 37px;
   text-align: center;
   letter-spacing: -0.05em;
+  @media (min-width: 1921px) and (min-height: 500px) {
+    font-size: 3em;
+    line-height: 1;
+  }
+  @media (min-width: 2501px) and (min-height: 500px) {
+    font-size: 4em;
+    line-height: 1;
+  }
   @media (max-width: 360px) {
     font-size: 0.938em;
     line-height: 22px;
