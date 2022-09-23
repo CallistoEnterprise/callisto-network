@@ -435,6 +435,14 @@ const PCMenu = styled(Box)`
   line-height: 22px;
   letter-spacing: -0.05em;
   color: white;
+  @media (min-width: 1921px) {
+    font-size: 1.5em;
+    line-height: 1;
+  }
+  @media (min-width: 2501px) {
+    font-size: 1.7em;
+    line-height: 1;
+  }
   > span + span {
     margin-left: 46.67px;
   }
@@ -490,6 +498,9 @@ const StyledContainer = styled(Box)`
     >img:first-of-type {
       @media (max-width: 768px) {
         display: none;
+      }
+      @media (min-width: 1921px) {
+        width: 10vw;
       }
     }
     >img:nth-of-type(2) {
