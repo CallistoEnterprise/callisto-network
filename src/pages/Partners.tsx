@@ -89,7 +89,7 @@ const Pictures = styled(Box)`
   @media (max-width: 800px) {
     right: 285px;
   }
-  @media (max-height: 675px) {
+  @media (max-height: 675px) and (max-width: 1920px) {
     transform: scale(.7);
     >div:nth-of-type(2) {
       bottom: 100%;
@@ -132,6 +132,9 @@ const TitleMobile = styled(Box)`
   letter-spacing: -0.05em;
   color: #ffffff;
   @media (min-width: 1401px) {
+    display: none;
+  }
+  @media (max-width: 320px) and (max-height: 480px) {
     display: none;
   }
 `;

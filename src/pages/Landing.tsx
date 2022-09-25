@@ -147,6 +147,9 @@ const ScrollIcon = styled(Box)`
   animation-name: mouse-scroll;
   animation-duration: 1.8s;
   animation-iteration-count: infinite;
+  @media (min-width: 1921px) {
+    width: 40px;
+  }
   @media (max-width: 1000px) {
     display: none;
   }
@@ -175,13 +178,24 @@ const Pagination = styled(Box)`
   transform: translateY(-50%);
   > div + div {
     margin-top: 27.78px;
+    @media (min-width: 3001px) {
+      margin-top: 40px;
+    }
   }
   > div {
     width: 5.6px;
     height: 5.6px;
     transition: 0.3s;
     background: #d9d9d9;
-    border-radius: 50%;
+    border-radius: 50%; 
+    @media (min-width: 2501px) {
+      width: 10px;
+      height: 10px;
+    }
+    @media (min-width: 3001px) {
+      width: 15px;
+      height: 15px;
+    }
   }
   @media (max-width: 1000px) {
     display: none;

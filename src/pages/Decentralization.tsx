@@ -192,7 +192,7 @@ const Pagination = styled(Box)`
 const Text = styled(Box)`
   font-weight: 300;
   font-size: 1.375em;
-  line-height: 27px;
+  line-height: 1.22727272727273;
   letter-spacing: -0.03em;
   color: white;
   > span {
@@ -200,11 +200,9 @@ const Text = styled(Box)`
   }
   @media (min-width: 1921px) and (min-height: 1201px) {
     font-size: 2em;
-    line-height: 1;
   }
   @media (min-width: 2501px) and (min-height: 1601px) {
     font-size: 3em;
-    line-height: 1;
   }
   @media (max-width: 1000px) {
     > span {
@@ -213,7 +211,9 @@ const Text = styled(Box)`
   }
   @media (max-width: 500px) {
     font-size: 1em;
-    line-height: 20px;
+  }
+  @media (max-width: 360px) {
+    font-size: 0.8em;
   }
 `;
 
@@ -283,9 +283,9 @@ const Section2 = styled(Box)`
       transform: translateX(50%);
     }
     @media (max-width: 1600px) and (max-height: 1434px) {
-      bottom: 0;
+      bottom: 10vh;
     }
-    @media (max-width: 1600px) and (max-height: 1000px) {
+    @media (max-width: 1600px) and (max-height: 1200px) {
       display: none;
     }
   }
