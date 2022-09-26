@@ -176,6 +176,9 @@ const Pagination = styled(Box)`
   transition: 0.4s;
   > div + div {
     margin-left: 23px;
+    @media (min-width: 3001px) {
+      margin-left: 40px;
+    }
   }
   > div {
     cursor: pointer;
@@ -183,6 +186,14 @@ const Pagination = styled(Box)`
     height: 5.6px;
     background: #d9d9d9;
     border-radius: 50%;
+    @media (min-width: 2501px) {
+      width: 10px;
+      height: 10px;
+    }
+    @media (min-width: 3001px) {
+      width: 15px;
+      height: 15px;
+    }
   }
   @media (max-width: 768px) {
     display: none;
