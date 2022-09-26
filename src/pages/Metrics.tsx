@@ -50,7 +50,6 @@ const Metrics: React.FC<any> = ({ active }) => {
       tmp.netwok_hashrate = parseFloat(
         result.netwok_hashrate.replace(" GH/s", "")
       );
-      console.log(tmp);
       setMetricData(tmp);
       setTimeout(() => setOpen1(true), 700);
       setTimeout(() => setOpen2(true), 1000);
